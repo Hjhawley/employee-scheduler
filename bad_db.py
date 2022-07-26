@@ -58,12 +58,12 @@ seasonal_shift_info = {
 				'Monday': {
 					'a_shift': 6,
 					'b_shift': 6,
-					'c_shift': 3
+					'c_shift': 4
 					},
 				'Tuesday': {
 					'a_shift': 6,
 					'b_shift': 6,
-					'c_shift': 3
+					'c_shift': 4
 					},				
 				'Wednesday': {
 					'a_shift': 6,
@@ -72,42 +72,43 @@ seasonal_shift_info = {
 				'Thursday': {
 					'a_shift': 6,
 					'b_shift': 6,
-					'c_shift': 3
+					'c_shift': 4
 				},
 				'Friday': {
 					'a_shift': 8,
 					'b_shift': 8,
-					'c_shift': 3
+					'c_shift': 4
 				},
 				'Saturday': {
 					'a_shift': 11,
 					'b_shift': 11,
-					'c_shift': 4
+					'c_shift': 4,
+					'd_shift': 4
 				},
 			},
 		},
 	}
 
-#June info
+#September info
 mentor_info = {
 	'Devon': {
-		'hard_dates': [],
-		'hours_wanted': 14,
+		'hard_dates': [1]+[2]+[4]+[6]+[8]+[9]+[11]+[13]+[15]+[16]+[18]+[19]+[20]+[22]+[25]+[27]+[29],
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Kate D': {
-		'hard_dates': [],
+		'hard_dates': [7]+[14]+[21]+[28],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Delcie':{
-		'hard_dates': [],
-		'hours_wanted': 20, 
+		'hard_dates': [i for i in range(2,6)]+[17],
+		'hours_wanted': 27, 
 		'soft_dates' : []
 	},
 	'Braxton': {
-		'hard_dates': [],
-		'hours_wanted': 20, 
+		'hard_dates': [3],
+		'hours_wanted': 27, 
 		'soft_dates' : []
 	},
 	'Mitch': {
@@ -116,12 +117,12 @@ mentor_info = {
 		'soft_dates' : []
 	},
 	'Levi': {
-		'hard_dates': [],
+		'hard_dates': [12]+[13],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
-	'Kate S': {
-		'hard_dates': [],
+	'Kite S': {
+		'hard_dates': [i for i in range(1,7)]+[8]+[12]+[13]+[i for i in range(15,21)]+[22]+[27]+[29],
 		'hours_wanted': 15,
 		'soft_dates' : [] 
 	}
@@ -129,8 +130,8 @@ mentor_info = {
 
 holidays = {
 	'shift_info': {
-		'a_shift': 9,
-		'b_shift': 9
+		'holiday_a_shift': 9,
+		'holiday_b_shift': 9
 	},
-	'dates': [3,4], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [5], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }

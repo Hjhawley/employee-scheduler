@@ -24,11 +24,11 @@ def write_to_csv(schedule: Schedule, file_name: str):
 
     with open(file_name, 'w') as output:
         writer = csv.writer(output)
-        row = ['date', 'a_shift', 'b_shift', 'c-shift', '', 'Mentor', 'Pay1 hours', 'Pay2 hours', 'Hours Wanted per pay period', 'hard dates']
+        row = ['date', 'a_shift', 'b_shift', 'c_shift', 'd_shift', 'Mentor', 'Pay1 hours', 'Pay2 hours', 'Hours Wanted per pay period', 'hard dates']
         writer.writerow(row)
         for idx, day in enumerate(schedule.assigned_days):
             weekday = week_day_mapper(day)
-            row = [weekday + ' '  + str(idx + 1)]
+            row = [str(idx + 1) + ' '  + weekday]
             for _, value in day.mentors_on_shift.items():
                 if value is None:
                     row.append('Not assigned')

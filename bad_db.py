@@ -91,37 +91,37 @@ seasonal_shift_info = {
 #June info
 mentor_info = {
 	'Devon': {
-		'hard_dates': [1]+[2]+[4]+[6]+[8]+[9]+[11]+[13]+[15]+[16]+[18]+[20]+[22]+[23]+[25]+[27]+[29]+[30],
+		'hard_dates': [],
 		'hours_wanted': 14,
 		'soft_dates' : []
 	},
 	'Kate D': {
-		'hard_dates': [7]+[11]+[14]+[21]+[25]+[28],
+		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Delcie':{
-		'hard_dates': [3],
+		'hard_dates': [],
 		'hours_wanted': 20, 
 		'soft_dates' : []
 	},
 	'Braxton': {
-		'hard_dates': [10],
+		'hard_dates': [],
 		'hours_wanted': 20, 
 		'soft_dates' : []
 	},
 	'Mitch': {
-		'hard_dates': [11]+[17],
+		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Levi': {
-		'hard_dates': [24],
+		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Kate S': {
-		'hard_dates': [4]+[5]+[12]+[18]+[19]+[25]+[26],
+		'hard_dates': [],
 		'hours_wanted': 15,
 		'soft_dates' : [] 
 	}
@@ -129,9 +129,8 @@ mentor_info = {
 
 holidays = {
 	'shift_info': {
-		'a_shift': 10,
-		'b_shift': 10,
-		'c_shift': 5
+		'a_shift': 9,
+		'b_shift': 9
 	},
 	'dates': [3,4], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }

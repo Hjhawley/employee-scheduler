@@ -90,39 +90,46 @@ seasonal_shift_info = {
 	}
 
 # [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+"""Weekday_behavior explained:
+	'Inv': Ignore hard_dates and only allow mentor to work on days in weekdays
+	'Pe': Look at hard_dates and remove any date that matches a weekday
+	'Re': Look at hard dates and add any date that matches a weekday
+	
+Note if weekdays field is empty we ignore weekday behavior.
+"""
 #September info
 mentor_info = {
 	'Devon': {
-		'weekdays': ["Sunday"],
-		'weekday_behavior': ["Inv"],
+		'weekdays': [],
+		'weekday_behavior': [],
 		'hard_dates': [1]+[2]+[4]+[6]+[8]+[9]+[11]+[13]+[15]+[16]+[18]+[19]+[20]+[22]+[25]+[27]+[29],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Kate D': {
-		'weekdays': ['Sunday'],
-		'weekday_behavior': ["Pe"],
+		'weekdays': [],
+		'weekday_behavior': [],
 		'hard_dates': [7]+[14]+[21]+[28],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Delcie':{
-		'weekdays': ["Sunday"],
-		'weekday_behavior': ["Re"],
+		'weekdays': [],
+		'weekday_behavior': [],
 		'hard_dates': [i for i in range(2,6)]+[17],
 		'hours_wanted': 27, 
 		'soft_dates' : []
 	},
 	'Braxton': {
 		'weekdays': [],
-		'weekday_behavior': ["Pe"],
+		'weekday_behavior': [],
 		'hard_dates': [3],
 		'hours_wanted': 27, 
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': [],
-		'weekday_behavior': ["Pe"],
+		'weekday_behavior': [],
 		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []

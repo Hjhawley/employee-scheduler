@@ -89,39 +89,54 @@ seasonal_shift_info = {
 		},
 	}
 
+# [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
 #September info
 mentor_info = {
 	'Devon': {
+		'weekdays': ["Sunday"],
+		'weekday_behavior': ["Inv"],
 		'hard_dates': [1]+[2]+[4]+[6]+[8]+[9]+[11]+[13]+[15]+[16]+[18]+[19]+[20]+[22]+[25]+[27]+[29],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Kate D': {
+		'weekdays': ['Sunday'],
+		'weekday_behavior': ["Pe"],
 		'hard_dates': [7]+[14]+[21]+[28],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Delcie':{
+		'weekdays': ["Sunday"],
+		'weekday_behavior': ["Re"],
 		'hard_dates': [i for i in range(2,6)]+[17],
 		'hours_wanted': 27, 
 		'soft_dates' : []
 	},
 	'Braxton': {
+		'weekdays': [],
+		'weekday_behavior': ["Pe"],
 		'hard_dates': [3],
 		'hours_wanted': 27, 
 		'soft_dates' : []
 	},
 	'Mitch': {
+		'weekdays': [],
+		'weekday_behavior': ["Pe"],
 		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Levi': {
+		'weekdays': [],
+		'weekday_behavior': ["Pe"],
 		'hard_dates': [12]+[13],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Kite S': {
+		'weekdays': [],
+		'weekday_behavior': ["Pe"],
 		'hard_dates': [i for i in range(1,7)]+[8]+[12]+[13]+[i for i in range(15,21)]+[22]+[27]+[29],
 		'hours_wanted': 15,
 		'soft_dates' : [] 

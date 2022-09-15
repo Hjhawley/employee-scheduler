@@ -163,7 +163,6 @@ class Schedule():
 
 	def __init__(self, year: int, month: int, len_p1: int):
 		self.week_day_map = {'Sunday': 6, 'Monday': 0, 'Tuesday': 1, 'Wednesday': 2, 'Thursday': 3, 'Friday': 4, 'Saturday': 5}
-		self.weekday_keys = ['Inv', 'Pe', 'Re']
 		self.len_p1 = len_p1
 		self.month = month
 		self.year = year
@@ -232,7 +231,6 @@ class Schedule():
 			c_info['len_pay'] = len_pay
 			c_info = {'hard_dates': c_info['hard_dates'], 'name': name, 'hours_wanted': c_info['hours_wanted'], 'len_pay': len_pay, 'soft_dates' : c_info['soft_dates']}
 
-			print(c_info['hard_dates'], name)
 			mentor_list[idx] = Mentor(**c_info)
 			idx += 1
 		
@@ -405,7 +403,7 @@ class Schedule():
 		return total_cost
 
 	def calc_soft_cost(self, pay_days: List[Day], cost =  3) -> int:
-		"""calculate the cost of mentors working on soft restricted dates. Defualt cost is 3 per day worked"""
+		"""calculate the cost of mentors working on soft restricted dates. Default cost is 3 per day worked"""
 		total_cost = 0
 		for day in pay_days:
 			for mentor in day.mentors_on_shift.values():

@@ -42,7 +42,7 @@ def write_to_csv(schedule: Schedule, file_name: str):
                 row[6] =  schedule.m1[idx].hours_pay
                 row[7] = schedule.m2[idx].hours_pay
                 row[8] = schedule.m1[idx].hours_wanted
-                row[9] = mentor_info[schedule.m1[idx].name]['hard_dates']
+                row[9] = schedule.m1[idx].hard_dates + schedule.m2[idx].hard_dates
             writer.writerow(row)
 
 

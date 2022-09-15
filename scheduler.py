@@ -162,7 +162,11 @@ class Day():
 class Schedule():
 
 	def __init__(self, year: int, month: int, len_p1: int):
+		self.week_day_map = {'Sunday': 6, 'Monday': 0, 'Tuesday': 1, 'Wednesday': 2, 'Thursday': 3, 'Friday': 4, 'Saturday': 5}
+		self.weekday_keys = ['Inv', 'Pe', 'Re']
 		self.len_p1 = len_p1
+		self.month = month
+		self.year = year
 		len_month = monthrange(year, month)[1] #get num days in month, used to calc len_p2
 		self.m1 = self.create_mentor_info(len_p1, '<=', len_p1)
 		self.pay1 = self.create_pay_days(self.m1, dt.datetime(year, month, 1), dt.datetime(year, month, len_p1))
@@ -173,6 +177,47 @@ class Schedule():
 		self.pay2 = self.create_pay_days(self.m2, start_date = dt.datetime(year, month, len_month - (len_month - len_p1) + 1), end_date= dt.datetime(year, month, len_month), offset = len_p1)
 		self.assign_all_shifts(self.pay2, self.m2)
 
+	def get_dates_of_weekday(self, day: str) -> List[int]:
+		"""given a day of the week ex: Sunday, return all dates in passed month that correspond to that weekday"""
+		len_month = monthrange(self.year, self.month)[1]
+		idx = 0
+		for i in range(7): #7 days in a week
+			if self.week_day_map[day] == dt.datetime(self.year, self.month, i + 1).weekday():
+				idx = i + 1
+				break
+		
+		dates = range(idx, len_month + 1, 7)
+		return dates
+	
+	def get_all_weekday_dates(self, weekdays: List[str]):
+		dates = []
+		for day in weekdays:
+			dates += self.get_dates_of_weekday(day)
+		dates.sort()
+		return dates
+
+	def hard_date_adj(self, hard_dates: List[int], weekdays: List[str], behavior: str) -> List[int]:
+		if len(weekdays) == 0:
+			return hard_dates
+		
+		len_month = monthrange(self.year, self.month)[1]
+
+		allowed_dates = self.get_all_weekday_dates(weekdays)
+
+		if behavior[0] == "Inv":
+			res_dates = range(1, len_month + 1)
+			res_dates = [date for date in res_dates if date not in allowed_dates]
+			return res_dates
+		elif behavior[0] == "Pe":
+			res_dates = [date for date in hard_dates if date not in allowed_dates]
+			return res_dates
+		elif behavior[0] == "Re":
+			res_dates = list(np.unique(hard_dates + allowed_dates))
+			res_dates.sort()
+			return res_dates
+		else:
+			raise ValueError("Got bad behavior keyword {0}".format(behavior))
+
 	def create_mentor_info(self, len_pay: int, comparator: str, end_day: int = 1) -> List[Mentor]:
 		"""Create initial default list of mentors for a given pay period"""
 		mentor_list = [None for _ in mentor_info]
@@ -180,11 +225,14 @@ class Schedule():
 
 		for name, info in mentor_info.items():
 			c_info = info.copy()
-			c_info['hard_dates'] = [date for date in info['hard_dates'] if get_truth(date, comparator, end_day)] 
+			new_dates = self.hard_date_adj(info['hard_dates'], info["weekdays"], info["weekday_behavior"])
+			c_info['hard_dates'] = [date for date in new_dates if get_truth(date, comparator, end_day)] 
 			c_info['name'] = name
 			c_info['hours_wanted'] = c_info['hours_wanted'] * 2 #2 weeks
 			c_info['len_pay'] = len_pay
+			c_info = {'hard_dates': c_info['hard_dates'], 'name': name, 'hours_wanted': c_info['hours_wanted'], 'len_pay': len_pay, 'soft_dates' : c_info['soft_dates']}
 
+			print(c_info['hard_dates'], name)
 			mentor_list[idx] = Mentor(**c_info)
 			idx += 1
 		

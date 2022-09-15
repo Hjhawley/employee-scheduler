@@ -97,12 +97,12 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# November info
+#September info
 mentor_info = {
 	'Devon': {
-		'weekdays': ['Sunday','Tuesday','Thursday'],
+		'weekdays': [],
 		'weekday_behavior': [],
-		'hard_dates': [],
+		'hard_dates': [1]+[2]+[4]+[6]+[8]+[9]+[11]+[13]+[15]+[16]+[18]+[19]+[20]+[22]+[25]+[27]+[29],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},

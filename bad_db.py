@@ -103,13 +103,13 @@ mentor_info = {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [3]+[17]+[18]+[20]+[21]+[23]+[24]+[25]+[26],
-		'hours_wanted': 33,
+		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Josie': {
 		'weekdays': ['Sunday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(23,26)],
+		'hard_dates': [i for i in range(22,27)],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},'Kate D': {
@@ -123,13 +123,13 @@ mentor_info = {
 		'weekdays': ['Sunday','Monday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [1]+[7]+[i for i in range(26,32)],
-		'hours_wanted': 26,
+		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(16,26)],
+		'hard_dates': [i for i in range(16,27)],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
@@ -137,27 +137,27 @@ mentor_info = {
 		'weekdays': ['Sunday','Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
-		'hours_wanted': 27,
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Grant': {
-		'weekdays': ['Sunday','Monday','Wednesday'],
-		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'weekdays': [],
+		'weekday_behavior': [],
+		'hard_dates': [],
 		'hours_wanted': 9,
 		'soft_dates' : []
 	},
 	'Carson': {
-		'weekdays': ['Sunday','Monday','Wednesday'],
+		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'hard_dates': [i for i in range(22,28)],
 		'hours_wanted': 9,
 		'soft_dates' : []
 	},
 	'Devon': {
-		'weekdays': ['Monday','Wednesday','Saturday'],
-		'weekday_behavior': ['Inv'],
-		'hard_dates': [],
+		'weekdays': ['Sunday','Tuesday','Thursday','Friday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
 		'hours_wanted': 9,
 		'soft_dates' : []
 	}

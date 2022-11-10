@@ -97,43 +97,70 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# November
+# December
 mentor_info = {
 	'Braxton': {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [10]+[15]+[26],
-		'hours_wanted': 32, 
+		'hard_dates': [3]+[17]+[18]+[20]+[21]+[23]+[24]+[25]+[26],
+		'hours_wanted': 33,
 		'soft_dates' : []
 	},
-	'Kate D': {
+	'Josie': {
+		'weekdays': ['Sunday','Thursday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [i for i in range(23,26)],
+		'hours_wanted': 20,
+		'soft_dates' : []
+	},'Kate D': {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [5]+[10]+[i for i in range(20,28)],
-		'hours_wanted': 25,
+		'hard_dates': [i for i in range(9,32)],
+		'hours_wanted': 26,
 		'soft_dates' : []
 	},
 	'Kite S': {
 		'weekdays': ['Sunday','Monday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,7)]+[19]+[i for i in range(23,28)],
-		'hours_wanted': 25,
+		'hard_dates': [1]+[7]+[i for i in range(26,32)],
+		'hours_wanted': 26,
 		'soft_dates' : []
 	},
 	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(3,6)],
-		'hours_wanted': 25,
+		'hard_dates': [i for i in range(16,26)],
+		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday','Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [5]+[10]+[12]+[19]+[24],
-		'hours_wanted': 23,
+		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'hours_wanted': 27,
 		'soft_dates' : []
 	},
+	'Grant': {
+		'weekdays': ['Sunday','Monday','Wednesday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'hours_wanted': 9,
+		'soft_dates' : []
+	},
+	'Carson': {
+		'weekdays': ['Sunday','Monday','Wednesday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'hours_wanted': 9,
+		'soft_dates' : []
+	},
+	'Devon': {
+		'weekdays': ['Monday','Wednesday','Saturday'],
+		'weekday_behavior': ['Inv'],
+		'hard_dates': [],
+		'hours_wanted': 9,
+		'soft_dates' : []
+	}
 }
 
 holidays = {
@@ -141,5 +168,5 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [24], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [24]+[25], # Add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }

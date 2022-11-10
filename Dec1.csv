@@ -1,0 +1,32 @@
+date,a_shift,b_shift,c_shift,d_shift,Mentor,Pay1 hours,Pay2 hours,Hours Wanted per pay period,hard dates
+1 Thursday,Mitch,Kate D,Braxton,,Braxton,59,51,66,"[3, 7, 14, 17, 18, 20, 21, 23, 24, 25, 26, 28]"
+2 Friday,Mitch,Kite S,Kate D,,Kate D,41,0,52,"[7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+3 Saturday,Kite S,Mitch,Kate D,Not assigned,Kite S,44,42,52,"[1, 4, 5, 6, 7, 8, 11, 12, 13, 15, 18, 19, 20, 22, 25, 26, 27, 28, 29, 30, 31]"
+4 Sunday,Kate D,Braxton,,,Levi,53,32,60,"[3, 10, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 31]"
+5 Monday,Kate D,Levi,Braxton,,Mitch,45,20,54,"[4, 5, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 24, 25, 26, 27, 28, 29, 30, 31]"
+6 Tuesday,Mitch,Kate D,Levi
+7 Wednesday,Levi,Not assigned
+8 Thursday,Mitch,Kate D,Levi
+9 Friday,Kite S,Mitch,Braxton
+10 Saturday,Kite S,Braxton,Not assigned,Not assigned
+11 Sunday,Braxton,Levi
+12 Monday,Braxton,Levi,Not assigned
+13 Tuesday,Braxton,Levi,Not assigned
+14 Wednesday,Kite S,Levi
+15 Thursday,Braxton,Levi,Not assigned
+16 Friday,Braxton,Kite S,Not assigned
+17 Saturday,Kite S,Not assigned,Not assigned,Not assigned
+18 Sunday,Not assigned,Not assigned
+19 Monday,Braxton,Not assigned,Not assigned
+20 Tuesday,Mitch,Not assigned,Not assigned
+21 Wednesday,Kite S,Not assigned
+22 Thursday,Mitch,Braxton,Not assigned
+23 Friday,Mitch,Kite S,Not assigned
+24 Saturday,Kite S,Not assigned
+25 Sunday,Not assigned,Not assigned
+26 Monday,Levi,Not assigned,Not assigned
+27 Tuesday,Levi,Braxton,Not assigned
+28 Wednesday,Levi,Not assigned
+29 Thursday,Levi,Braxton,Not assigned
+30 Friday,Levi,Braxton,Not assigned
+31 Saturday,Braxton,Not assigned,Not assigned,Not assigned

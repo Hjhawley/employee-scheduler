@@ -56,9 +56,9 @@ seasonal_shift_info = {
 					'b_shift': 9
 					}, 
 				'Monday': {
-					'a_shift': 6,
-					'b_shift': 6,
-					'c_shift': 4
+					'a_shift': 7, # Mentor meeting
+					'b_shift': 7,
+					'c_shift': 5
 					},
 				'Tuesday': {
 					'a_shift': 6,
@@ -106,6 +106,13 @@ mentor_info = {
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
+	'Ella (Sat C shift)': {
+		'weekdays': ['Tuesday','Wednesday','Friday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [3]+[17]+[18]+[20]+[21]+[23]+[24]+[25]+[26],
+		'hours_wanted': 24,
+		'soft_dates' : []
+	},
 	'Josie': {
 		'weekdays': ['Sunday','Thursday'],
 		'weekday_behavior': ['Re'],
@@ -119,8 +126,8 @@ mentor_info = {
 		'hours_wanted': 26,
 		'soft_dates' : []
 	},
-	'Kite S': {
-		'weekdays': ['Sunday','Monday','Tuesday','Thursday'],
+	'Kite S (Mon C shift)': {
+		'weekdays': ['Sunday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [1]+[7]+[i for i in range(26,32)],
 		'hours_wanted': 20,
@@ -129,7 +136,7 @@ mentor_info = {
 	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(16,27)],
+		'hard_dates': [i for i in range(15,27)],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},

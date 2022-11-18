@@ -97,53 +97,47 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# December
+# January
 mentor_info = {
 	'Braxton': {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [3]+[17]+[18]+[20]+[21]+[23]+[24]+[25]+[26],
+		'hard_dates': [],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [3]+[17]+[18]+[20]+[21]+[23]+[24]+[25]+[26],
+		'hard_dates': [i for i in range[(1,9)]],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Josie': {
 		'weekdays': ['Sunday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(22,27)],
+		'hard_dates': [],
 		'hours_wanted': 20,
-		'soft_dates' : []
-	},'Kate D': {
-		'weekdays': ['Wednesday'],
-		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(9,32)],
-		'hours_wanted': 26,
 		'soft_dates' : []
 	},
-	'Kite S (Mon C shift)': {
+	'Kate S (Mon C shift)': {
 		'weekdays': ['Sunday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[7]+[i for i in range(26,32)],
+		'hard_dates': [],
 		'hours_wanted': 20,
-		'soft_dates' : []
+		'soft_dates' : [i for i in range[(1,9)]]
 	},
 	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(15,27)],
+		'hard_dates': [],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday','Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'hard_dates': [],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
@@ -157,14 +151,14 @@ mentor_info = {
 	'Carson': {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(22,28)],
+		'hard_dates': [],
 		'hours_wanted': 9,
 		'soft_dates' : []
 	},
 	'Devon': {
 		'weekdays': ['Sunday','Tuesday','Thursday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(10,18)]+[i for i in range(24,32)],
+		'hard_dates': [],
 		'hours_wanted': 9,
 		'soft_dates' : []
 	}
@@ -175,5 +169,5 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [24]+[25], # Add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [], # Add during relevant month, include only day. Example: when scheduling for July add 4 to this list
 }

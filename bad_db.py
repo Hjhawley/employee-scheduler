@@ -123,12 +123,12 @@ mentor_info = {
 	'Kate S (Mon C shift)': {
 		'weekdays': ['Sunday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [i for i in range[(1,9)]]+[13],
 		'hours_wanted': 20,
-		'soft_dates' : [i for i in range[(1,9)]]
+		'soft_dates' : []
 	},
 	'Levi': {
-		'weekdays': ['Saturday'],
+		'weekdays': ['Thursday','Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
 		'hours_wanted': 30,

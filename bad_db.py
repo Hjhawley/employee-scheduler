@@ -56,7 +56,7 @@ seasonal_shift_info = {
 					'b_shift': 9
 					}, 
 				'Monday': {
-					'a_shift': 7, # Mentor meeting
+					'a_shift': 7,
 					'b_shift': 7,
 					'c_shift': 5
 					},
@@ -100,16 +100,16 @@ Note if weekdays field is empty we ignore weekday behavior.
 # January
 mentor_info = {
 	'Braxton': {
-		'weekdays': ['Sunday','Tuesday','Thursday','Saturday'],
-		'weekday_behavior': ['Inv'],
-		'hard_dates': [],
+		'weekdays': ['Monday','Wednesday','Friday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [14]+[28],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range[(1,9)]],
+		'hard_dates': [i for i in range(1,9)],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
@@ -123,7 +123,7 @@ mentor_info = {
 	'Kate S (Mon C shift)': {
 		'weekdays': ['Sunday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range[(1,9)]]+[13],
+		'hard_dates': [i for i in range(1,9)]+[13],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
@@ -144,7 +144,7 @@ mentor_info = {
 	'Grant': {
 		'weekdays': ['Monday','Wednesday'],
 		'weekday_behavior': [],
-		'hard_dates': [],
+		'hard_dates': ['Re'],
 		'hours_wanted': 8,
 		'soft_dates' : []
 	},
@@ -169,5 +169,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [], # Add during relevant month, include only day. Example: when scheduling for July add 4 to this list
+	'dates': [0], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
+
+# ex: python spread_gen.py JanSched 2023 1 15

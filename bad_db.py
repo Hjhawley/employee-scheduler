@@ -56,9 +56,9 @@ seasonal_shift_info = {
 					'b_shift': 9
 					}, 
 				'Monday': {
-					'a_shift': 6,
-					'b_shift': 6,
-					'c_shift': 4
+					'a_shift': 7,
+					'b_shift': 7,
+					'c_shift': 5
 					},
 				'Tuesday': {
 					'a_shift': 6,
@@ -139,6 +139,27 @@ mentor_info = {
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
 		'hours_wanted': 20,
+		'soft_dates' : []
+	},
+	'Devon': {
+		'weekdays': ['Sunday','Tuesday','Thursday','Friday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [],
+		'hours_wanted': 7,
+		'soft_dates' : []
+	},
+	'Carson': {
+		'weekdays': ['Thursday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [],
+		'hours_wanted': 7,
+		'soft_dates' : []
+	},
+	'Grant': {
+		'weekdays': ['Tuesday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [],
+		'hours_wanted': 7,
 		'soft_dates' : []
 	},
 }

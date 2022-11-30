@@ -1,32 +1,32 @@
 date,a_shift,b_shift,c_shift,d_shift,Mentor,Pay1 hours,Pay2 hours,Hours Wanted per pay period,hard dates
-1 Sunday,Braxton,Levi,,,Braxton,41,41,40,"[2, 4, 6, 9, 11, 13, 14, 16, 18, 20, 23, 25, 27, 28, 30]"
-2 Monday,Mitch,Levi,Not assigned,,Kate S (Mon C shift),23,42,40,"[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 15, 17, 19, 22, 24, 26, 29, 31]"
-3 Tuesday,Not assigned,Not assigned,Not assigned,,Levi,46,40,40,"[5, 7, 12, 14, 19, 21, 26, 28]"
-4 Wednesday,Levi,Mitch,,,Mitch,40,45,40,"[1, 8, 15, 22, 29]"
-5 Thursday,Braxton,Mitch,Not assigned
-6 Friday,Levi,Not assigned,Not assigned
-7 Saturday,Braxton,Mitch,Not assigned,Not assigned
-8 Sunday,Braxton,Levi
-9 Monday,Kate S (Mon C shift),Not assigned,Not assigned
-10 Tuesday,Not assigned,Not assigned,Not assigned
-11 Wednesday,Kate S (Mon C shift),Not assigned
-12 Thursday,Braxton,Not assigned,Not assigned
-13 Friday,Levi,Not assigned,Not assigned
-14 Saturday,Kate S (Mon C shift),Mitch,Not assigned,Not assigned
-15 Sunday,Not assigned,Not assigned
-16 Monday,Kate S (Mon C shift),Levi,Mitch
-17 Tuesday,Levi,Mitch,Not assigned
+1 Sunday,Braxton,Levi,,,Braxton,43,39,40,"[2, 4, 6, 9, 11, 13, 14, 16, 18, 20, 23, 25, 27, 28, 30]"
+2 Monday,Grant,Mitch,Carson,,Ella (Sat C shift),33,48,40,"[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 17, 18, 20, 24, 25, 27, 31]"
+3 Tuesday,Josie,Mitch,Braxton,,Josie,43,40,40,"[1, 5, 8, 12, 15, 19, 22, 26, 29]"
+4 Wednesday,Levi,Devon,,,Kate S (Mon C shift),24,40,40,"[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 15, 17, 19, 22, 24, 26, 29, 31]"
+5 Thursday,Braxton,Mitch,Grant,,Levi,42,40,40,"[5, 7, 12, 14, 19, 21, 26, 28]"
+6 Friday,Josie,Levi,Mitch,,Mitch,43,39,40,"[1, 8, 15, 22, 29]"
+7 Saturday,Devon,Josie,Mitch,Carson,Devon,17,20,14,"[1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 19, 20, 22, 24, 26, 27, 29, 31]"
+8 Sunday,Braxton,Levi,,,Carson,18,15,14,"[5, 12, 19, 26]"
+9 Monday,Kate S (Mon C shift),Ella (Sat C shift),Carson,,Grant,17,16,14,"[3, 10, 17, 24, 31]"
+10 Tuesday,Josie,Levi,Carson
+11 Wednesday,Kate S (Mon C shift),Grant
+12 Thursday,Ella (Sat C shift),Braxton,Mitch
+13 Friday,Josie,Mitch,Levi
+14 Saturday,Kate S (Mon C shift),Ella (Sat C shift),Josie,Mitch
+15 Sunday,Ella (Sat C shift),Braxton
+16 Monday,Grant,Ella (Sat C shift),Devon
+17 Tuesday,Braxton,Josie,Levi
 18 Wednesday,Kate S (Mon C shift),Levi
-19 Thursday,Braxton,Mitch,Not assigned
-20 Friday,Kate S (Mon C shift),Mitch,Levi
-21 Saturday,Braxton,Kate S (Mon C shift),Mitch,Not assigned
-22 Sunday,Braxton,Levi
-23 Monday,Not assigned,Not assigned,Not assigned
-24 Tuesday,Not assigned,Not assigned,Not assigned
-25 Wednesday,Not assigned,Not assigned
-26 Thursday,Braxton,Mitch,Not assigned
-27 Friday,Not assigned,Not assigned,Not assigned
-28 Saturday,Kate S (Mon C shift),Mitch,Not assigned,Not assigned
-29 Sunday,Braxton,Levi
-30 Monday,Not assigned,Not assigned,Not assigned
-31 Tuesday,Not assigned,Not assigned,Not assigned
+19 Thursday,Braxton,Ella (Sat C shift),Mitch
+20 Friday,Kate S (Mon C shift),Levi,Josie
+21 Saturday,Devon,Ella (Sat C shift),Carson,Grant
+22 Sunday,Ella (Sat C shift),Braxton
+23 Monday,Levi,Mitch,Carson
+24 Tuesday,Braxton,Levi,Josie
+25 Wednesday,Mitch,Carson
+26 Thursday,Braxton,Ella (Sat C shift),Mitch
+27 Friday,Kate S (Mon C shift),Mitch,Josie
+28 Saturday,Josie,Kate S (Mon C shift),Mitch,Devon
+29 Sunday,Levi,Ella (Sat C shift)
+30 Monday,Josie,Kate S (Mon C shift),Grant
+31 Tuesday,Braxton,Mitch,Josie

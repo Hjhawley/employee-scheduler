@@ -270,7 +270,7 @@ class Schedule():
 		"""We prioritize using mentors available for each days shift over total number of workable shifts over pay period"""
 		total_available_days = sum([day.get_mentor_days() for day in pay_days]) #total workable shifts
 		for day in pay_days:
-			day.priority_value = (day.get_mentor_days() / total_available_days) 
+			day.priority_value = (day.get_mentor_days() / (total_available_days + 1)) 
 
 		pay_days.sort(key=lambda day: (day.priority_value,  -day.get_available_mentor_hours())) #costume sort
 

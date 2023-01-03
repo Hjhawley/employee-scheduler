@@ -103,14 +103,14 @@ mentor_info = {
 	'Braxton (Thu C shift)': {
 		'weekdays': ['Monday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [23]+[24]+[25],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [2]+[14]+[18],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
@@ -122,7 +122,7 @@ mentor_info = {
 		'soft_dates' : []
 	},
 	'Kate S (Mon C shift)': {
-		'weekdays': ['Sunday'],
+		'weekdays': ['Sunday','Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [24]+[25]+[26],
 		'hours_wanted': 20,

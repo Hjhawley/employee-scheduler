@@ -142,8 +142,14 @@ class Day():
 			start_date = season_info.copy()['dates']['start'].date()
 			end_date = season_info.copy()['dates']['end'].date() 
 
+			cur_year = self.date_info.date().year
+
 			if self.date_info.date() >= start_date and self.date_info.date() <= end_date:
 				return season
+			
+			if self.date_info.date().replace(year =cur_year + 1) >= start_date and self.date_info.date().replace(year =cur_year + 1) <= end_date:
+				return season
+		
 		
 		raise ValueError('Could not find season that matched given date')
 	

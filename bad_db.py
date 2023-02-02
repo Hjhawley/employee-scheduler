@@ -137,7 +137,7 @@ mentor_info = {
 	'Levi (Thu C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [i for i in range(12,18)],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
@@ -158,4 +158,4 @@ holidays = {
 	'dates': [20], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py FebSched 2023 2 14
+# ex: python spread_gen.py MarchSchedule 2023 3 15

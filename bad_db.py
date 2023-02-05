@@ -104,20 +104,21 @@ mentor_info = {
 		'weekdays': [],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 30,
+		'hours_wanted': 25,
 		'soft_dates' : []
-	},'Braxton (Thu C shift)': {
+	},
+	'Braxton (Thu C shift)': {
 		'weekdays': ['Monday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [1]+[2]+[3]+[6]+[7]+[i for i in range(12,19)]+[24]+[25],
-		'hours_wanted': 25,
+		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(6,12)]+[25]+[31],
-		'hours_wanted': 25,
+		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Josie': {
@@ -138,14 +139,21 @@ mentor_info = {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(12,18)],
-		'hours_wanted': 25,
+		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [6]+[9]+[10],
-		'hours_wanted': 25,
+		'hours_wanted': 20,
+		'soft_dates' : []
+	},
+	'Devon': {
+		'weekdays': ['Sunday', 'Monday', 'Tuesday', 'Thursday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [i for i in range(9,19)],
+		'hours_wanted': 10,
 		'soft_dates' : []
 	},
 }

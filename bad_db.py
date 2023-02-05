@@ -101,59 +101,59 @@ Note if weekdays field is empty we ignore weekday behavior.
 # March
 mentor_info = {
 	'Aubree': {
-		'weekdays': [],
-		'weekday_behavior': ['Re'],
+		'weekdays': ['Sunday','Monday','Wednesday'],
+		'weekday_behavior': ['Inv'],
 		'hard_dates': [],
-		'hours_wanted': 25,
+		'hours_wanted': 12,
 		'soft_dates' : []
 	},
 	'Braxton (Thu C shift)': {
 		'weekdays': ['Monday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [1]+[2]+[3]+[6]+[7]+[i for i in range(12,19)]+[24]+[25],
-		'hours_wanted': 20,
+		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(6,12)]+[25]+[31],
-		'hours_wanted': 20,
+		'hard_dates': [i for i in range(6,12)]+[13]+[16]+[25]+[31],
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Josie': {
 		'weekdays': ['Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 30,
+		'hours_wanted': 35,
 		'soft_dates' : []
 	},
 	'Kate S (Mon C shift)': {
 		'weekdays': ['Sunday','Tuesday','Wednesday','Thursday',],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [3],
-		'hours_wanted': 20,
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Levi (Thu C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(12,18)],
-		'hours_wanted': 20,
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [6]+[9]+[10],
-		'hours_wanted': 20,
+		'hard_dates': [6]+[9]+[10]+[24]+[25],
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Devon': {
 		'weekdays': ['Sunday', 'Monday', 'Tuesday', 'Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(9,19)],
-		'hours_wanted': 10,
+		'hard_dates': [i for i in range(9,19)]+[25],
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 }

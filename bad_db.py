@@ -144,7 +144,7 @@ mentor_info = {
 	'Mitch': {
 		'weekdays': ['Sunday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [6]+[9]+[10],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},

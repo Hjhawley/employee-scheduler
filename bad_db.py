@@ -122,7 +122,7 @@ mentor_info = {
 		'soft_dates' : []
 	},
 	'Josie': {
-		'weekdays': ['Wednesday','Friday'],
+		'weekdays': ['Monday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
 		'hours_wanted': 35,
@@ -138,7 +138,7 @@ mentor_info = {
 	'Levi (Thu C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(12,18)],
+		'hard_dates': [i for i in range(12,18)], # Levi C shift on the 10th if possible
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
@@ -163,7 +163,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [20], #add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py MarchSchedule 2023 3 15
+# ex: python spread_gen.py sched_new 2023 3 15

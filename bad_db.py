@@ -98,7 +98,7 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# March
+# April
 mentor_info = {
 	'Aubree': {
 		'weekdays': ['Sunday','Monday','Wednesday'],
@@ -110,19 +110,19 @@ mentor_info = {
 	'Braxton (Thu C shift)': {
 		'weekdays': ['Monday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[2]+[3]+[6]+[7]+[i for i in range(12,19)]+[24]+[25],
+		'hard_dates': [3]+[i for i in range(7,10)]+[27],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(6,12)]+[13]+[16]+[25]+[31],
+		'hard_dates': [],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Josie': {
-		'weekdays': ['Monday','Friday'],
+		'weekdays': ['Sunday','Monday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
 		'hours_wanted': 35,
@@ -131,28 +131,28 @@ mentor_info = {
 	'Kate S (Mon C shift)': {
 		'weekdays': ['Sunday','Tuesday','Wednesday','Thursday',],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [3],
+		'hard_dates': [i for i in range(1,10)]+[17]+[21]+[26],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Levi (Thu C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(12,18)], # Levi C shift on the 10th if possible
+		'hard_dates': [i for i in range(13,18)], # Levi C shift on the 10th if possible
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [6]+[9]+[10]+[24]+[25]+[29],
+		'hard_dates': [7]+[22],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Devon': {
 		'weekdays': ['Sunday', 'Monday', 'Tuesday', 'Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(9,19)]+[25],
+		'hard_dates': [8]+[14]+[15]+[16]+[22]+[26]+[28],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},

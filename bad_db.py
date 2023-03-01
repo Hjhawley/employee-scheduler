@@ -101,16 +101,16 @@ Note if weekdays field is empty we ignore weekday behavior.
 # April
 mentor_info = {
 	'Aubree': {
-		'weekdays': ['Sunday','Monday','Wednesday'],
-		'weekday_behavior': ['Inv'],
+		'weekdays': ['Tuesday','Thursday','Friday'],
+		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 12,
+		'hours_wanted': 16,
 		'soft_dates' : []
 	},
 	'Braxton (Thu C shift)': {
-		'weekdays': ['Monday','Wednesday','Friday'],
+		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [3]+[i for i in range(7,10)]+[27],
+		'hard_dates': [3]+[i for i in range(7,10)]+[20]+[27],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
@@ -138,7 +138,7 @@ mentor_info = {
 	'Levi (Thu C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(13,18)], # Levi C shift on the 10th if possible
+		'hard_dates': [6]+[i for i in range(13,18)], # Levi C shift on the 10th if possible
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
@@ -163,7 +163,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [9], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py sched_new 2023 3 15
+# ex: python spread_gen.py apr_sched 2023 4 15

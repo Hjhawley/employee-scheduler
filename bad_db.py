@@ -110,7 +110,7 @@ mentor_info = {
 	'Braxton (Thu C shift)': {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [5],
 		'hours_wanted': 35,
 		'soft_dates' : []
 	},
@@ -145,7 +145,7 @@ mentor_info = {
 	'Mitch': {
 		'weekdays': ['Sunday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [i for i in range(5,13)]+[i for i in range(16,24)],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
@@ -166,4 +166,4 @@ holidays = {
 	'dates': [29], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py apr_sched 2023 4 15
+# ex: python spread_gen.py may_sched 2023 5 15

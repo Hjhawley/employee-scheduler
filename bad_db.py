@@ -149,11 +149,11 @@ mentor_info = {
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
-	'Devon': {
-		'weekdays': ['Sunday', 'Monday', 'Tuesday', 'Thursday'],
+	'Sam': {
+		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 20,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 }

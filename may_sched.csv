@@ -1,32 +1,32 @@
 date,a_shift,b_shift,c_shift,d_shift,Mentor,Pay1 hours,Pay2 hours,Hours Wanted per pay period,hard dates
-1 Monday,Ella (Sat C shift),Braxton (Thu C shift),Kate (Mon C shift),,Aubree,17,21,24,"[2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 16, 18, 19, 20, 21, 23, 25, 26, 27, 28, 30]"
-2 Tuesday,Mitch,Braxton (Thu C shift),Levi (Thu C shift),,Braxton (Thu C shift),62,65,70,"[3, 5, 10, 17, 24, 31]"
-3 Wednesday,Devon,Aubree,Levi (Thu C shift),,Ella (Sat C shift),13,9,50,"[2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31]"
-4 Thursday,Ella (Sat C shift),Mitch,Levi (Thu C shift),,Josie,27,30,30,"[1, 5, 7, 8, 12, 14, 15, 19, 21, 22, 26, 28, 29]"
-5 Friday,Kate (Mon C shift),Devon,Levi (Thu C shift),,Kate (Mon C shift),40,43,50,"[2, 3, 4, 7, 9, 10, 11, 14, 16, 17, 18, 21, 23, 24, 25, 28, 30, 31]"
-6 Saturday,Kate (Mon C shift),Devon,Braxton (Thu C shift),Josie,Levi (Thu C shift),39,46,50,"[6, 13, 20, 27]"
-7 Sunday,Braxton (Thu C shift),Levi (Thu C shift),,,Mitch,27,28,40,"[3, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31]"
-8 Monday,Kate (Mon C shift),Braxton (Thu C shift),Aubree,,Devon,35,38,40,"[1, 2, 4, 7, 8, 9, 11, 14, 15, 16, 18, 21, 22, 23, 25, 28, 29, 30]"
+1 Monday,Ella (Sat C shift),Kate (Mon C shift),Mitch,,Aubree,20,24,24,"[2, 4, 5, 6, 7, 9, 11, 12, 13, 14, 16, 18, 19, 20, 21, 23, 25, 26, 27, 28, 30]"
+2 Tuesday,Mitch,Braxton (Thu C shift),Levi (Thu C shift),,Braxton (Thu C shift),59,62,70,"[3, 5, 10, 17, 24, 31]"
+3 Wednesday,Devon,Aubree,Josie,,Ella (Sat C shift),14,9,50,"[2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31]"
+4 Thursday,Ella (Sat C shift),Mitch,Josie,,Josie,26,26,30,"[1, 5, 7, 8, 12, 14, 15, 19, 21, 22, 26, 28, 29]"
+5 Friday,Devon,Levi (Thu C shift),Not assigned,,Kate (Mon C shift),28,30,50,"[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 16, 17, 18, 19, 20, 21, 23, 24, 25, 28, 30, 31]"
+6 Saturday,Devon,Braxton (Thu C shift),Josie,Not assigned,Levi (Thu C shift),44,43,50,"[6, 13, 15, 16, 17, 18, 19, 20, 21, 27]"
+7 Sunday,Braxton (Thu C shift),Levi (Thu C shift),,,Mitch,31,28,40,"[3, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31]"
+8 Monday,Aubree,Braxton (Thu C shift),Levi (Thu C shift),,Devon,35,38,40,"[1, 2, 4, 7, 8, 9, 11, 14, 15, 16, 18, 21, 22, 23, 25, 28, 29, 30]"
 9 Tuesday,Braxton (Thu C shift),Josie,Levi (Thu C shift)
-10 Wednesday,Devon,Aubree,Josie
+10 Wednesday,Devon,Levi (Thu C shift),Aubree
 11 Thursday,Braxton (Thu C shift),Josie,Levi (Thu C shift)
 12 Friday,Kate (Mon C shift),Devon,Braxton (Thu C shift)
-13 Saturday,Josie,Mitch,Braxton (Thu C shift),Kate (Mon C shift)
+13 Saturday,Kate (Mon C shift),Mitch,Braxton (Thu C shift),Josie
 14 Sunday,Braxton (Thu C shift),Levi (Thu C shift)
-15 Monday,Mitch,Kate (Mon C shift),Levi (Thu C shift)
-16 Tuesday,Braxton (Thu C shift),Josie,Levi (Thu C shift)
-17 Wednesday,Devon,Aubree,Levi (Thu C shift)
-18 Thursday,Braxton (Thu C shift),Levi (Thu C shift),Josie
-19 Friday,Kate (Mon C shift),Devon,Braxton (Thu C shift)
-20 Saturday,Kate (Mon C shift),Devon,Braxton (Thu C shift),Josie
-21 Sunday,Braxton (Thu C shift),Levi (Thu C shift)
-22 Monday,Kate (Mon C shift),Aubree,Braxton (Thu C shift)
-23 Tuesday,Braxton (Thu C shift),Josie,Levi (Thu C shift)
-24 Wednesday,Devon,Aubree,Josie
-25 Thursday,Mitch,Braxton (Thu C shift),Levi (Thu C shift)
+15 Monday,Kate (Mon C shift),Mitch,Aubree
+16 Tuesday,Braxton (Thu C shift),Josie,Not assigned
+17 Wednesday,Devon,Aubree,Josie
+18 Thursday,Braxton (Thu C shift),Josie,Not assigned
+19 Friday,Devon,Braxton (Thu C shift),Not assigned
+20 Saturday,Devon,Braxton (Thu C shift),Josie,Not assigned
+21 Sunday,Braxton (Thu C shift),Not assigned
+22 Monday,Kate (Mon C shift),Levi (Thu C shift),Aubree
+23 Tuesday,Levi (Thu C shift),Braxton (Thu C shift),Josie
+24 Wednesday,Devon,Aubree,Levi (Thu C shift)
+25 Thursday,Mitch,Levi (Thu C shift),Braxton (Thu C shift)
 26 Friday,Kate (Mon C shift),Mitch,Levi (Thu C shift)
 27 Saturday,Kate (Mon C shift),Mitch,Braxton (Thu C shift),Devon
-28 Sunday,Braxton (Thu C shift),Levi (Thu C shift)
+28 Sunday,Levi (Thu C shift),Braxton (Thu C shift)
 29 Monday,Ella (Sat C shift),Kate (Mon C shift)
-30 Tuesday,Mitch,Braxton (Thu C shift),Levi (Thu C shift)
-31 Wednesday,Devon,Josie,Levi (Thu C shift)
+30 Tuesday,Mitch,Levi (Thu C shift),Braxton (Thu C shift)
+31 Wednesday,Devon,Aubree,Josie

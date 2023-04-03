@@ -14,34 +14,33 @@ seasonal_shift_info = {
 				'Monday': {
 					'a_shift': 7,
 					'b_shift': 7,
-					'c_shift': 3
+					'c_shift': 5
 				},
 				'Tuesday': {
-					'a_shift': 7,
-					'b_shift': 7,
-					'c_shift': 3
+					'a_shift': 6,
+					'b_shift': 6,
+					'c_shift': 4
 				},
 								
 				'Wednesday': {
-					'a_shift': 7,
-					'b_shift': 7,
-					'c_shift': 3
+					'a_shift': 6,
+					'b_shift': 6
 				},
 				'Thursday': {
-					'a_shift': 7,
-					'b_shift': 7,
-					'c_shift': 3
+					'a_shift': 6,
+					'b_shift': 6,
+					'c_shift': 4
 				},
 				'Friday': {
-					'a_shift': 7,
-					'b_shift': 7,
-					'c_shift': 3
+					'a_shift': 8,
+					'b_shift': 8,
+					'c_shift': 4
 				},
 				'Saturday': {
-					'a_shift': 7,
-					'b_shift': 7,
-					'c_shift': 3,
-					'd_shift' : 3
+					'a_shift': 11,
+					'b_shift': 11,
+					'c_shift': 4
+					#'d_shift' : 3
 				},
 			},
 		},
@@ -83,7 +82,7 @@ seasonal_shift_info = {
 				'Saturday': {
 					'a_shift': 11,
 					'b_shift': 11,
-					'c_shift': 4,
+					'c_shift': 4
 					#'d_shift': 4
 				},
 			},

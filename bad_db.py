@@ -39,8 +39,8 @@ seasonal_shift_info = {
 				'Saturday': {
 					'a_shift': 11,
 					'b_shift': 11,
-					'c_shift': 4
-					#'d_shift' : 3
+					'c_shift': 4,
+					'd_shift' : 4
 				},
 			},
 		},
@@ -82,8 +82,8 @@ seasonal_shift_info = {
 				'Saturday': {
 					'a_shift': 11,
 					'b_shift': 11,
-					'c_shift': 4
-					#'d_shift': 4
+					'c_shift': 4,
+					'd_shift': 4
 				},
 			},
 		},
@@ -109,8 +109,8 @@ mentor_info = {
 	'Aubree': {
 		'weekdays': [],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 30,
+		'hard_dates': [13]+[27],
+		'hours_wanted': 11,
 		'soft_dates' : []
 	},
 	'Braxton (Thu C shift)': {
@@ -142,7 +142,7 @@ mentor_info = {
 		'soft_dates' : []
 	},
 	'Mitch': {
-		'weekdays': ['Sunday', 'Wednesday'],
+		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(5,13)]+[i for i in range(16,24)],
 		'hours_wanted': 20,

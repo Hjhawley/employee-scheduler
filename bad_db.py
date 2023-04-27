@@ -103,70 +103,70 @@ mentor_info = {
 		'weekdays': [],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 29,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Aubree': {
 		'weekdays': ['Sunday','Monday','Tuesday','Wednesday'],
 		'weekday_behavior': ['Inv'],
 		'hard_dates': [28]+[29]+[30],
-		'hours_wanted': 10,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Braxton (Thu C shift)': {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 29,
+		'hard_dates': [1]+[15]+[29],
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
     'Devon': {
 		'weekdays': ['Sunday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(25,31)],
-		'hours_wanted': 11,
+		'hours_wanted': 10,
 		'soft_dates' : []
 	},
 	'Ella (Sat C shift)': {
 		'weekdays': ['Tuesday','Wednesday','Friday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(8,13)]+[30],
-		'hours_wanted': 24,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Kate (Mon C shift)': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(16,20)]+[29]+[30],
-		'hours_wanted': 39,
+		'hours_wanted': 35,
 		'soft_dates' : []
 	},
-	'Levi (Thu C shift)': {
+	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [16]+[17]+[i for i in range(23,31)],
-		'hours_wanted': 24,
+		'hard_dates': [8]+[16]+[17]+[i for i in range(22,31)],
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(20,28)],
-		'hours_wanted': 23,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(19,24)],
-		'hours_wanted': 29,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
     'Sam': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 14,
+		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 }
@@ -176,7 +176,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [29], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
 # ex: python spread_gen.py jun_sched 2023 6 15

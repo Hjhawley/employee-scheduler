@@ -1,31 +1,31 @@
 date,a_shift,b_shift,c_shift,d_shift,Mentor,Pay1 hours,Pay2 hours,Hours Wanted per pay period,hard dates
-1 Thursday,Ella (Sat C shift),Braxton (Thu C shift),Kate (Mon C shift),,Asher,45.0,36,58,[]
-2 Friday,Kate (Mon C shift),Asher,Braxton (Thu C shift),,Aubree,5,0,20,"[1, 2, 3, 8, 9, 10, 15, 16, 17, 22, 23, 24, 29, 30]"
-3 Saturday,Ella (Sat C shift),Kate (Mon C shift),Roxy,Braxton (Thu C shift),Braxton (Thu C shift),38.0,40,58,"[7, 14, 21, 28]"
-4 Sunday,Ella (Sat C shift),Roxy,,,Devon,4,4.0,22,"[2, 4, 9, 11, 16, 18, 23, 25, 26, 27, 28, 29, 30]"
-5 Monday,Kate (Mon C shift),Asher,Aubree,,Ella (Sat C shift),35,28,48,"[2, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 20, 21, 23, 27, 28, 30]"
-6 Tuesday,Kate (Mon C shift),Asher,Mitch,,Kate (Mon C shift),64.0,62,78,"[4, 11, 16, 17, 18, 19, 25, 29, 30]"
-7 Wednesday,Kate (Mon C shift),Asher,,,Levi (Thu C shift),30,31,48,"[3, 10, 16, 17, 23, 24, 25, 26, 27, 28, 29, 30]"
-8 Thursday,Mitch,Asher,Braxton (Thu C shift),,Mitch,29,43,46,"[4, 11, 18, 20, 21, 22, 23, 24, 25, 26, 27]"
-9 Friday,Kate (Mon C shift),Levi (Thu C shift),Mitch,,Roxy,42,50,58,"[1, 8, 15, 19, 20, 21, 22, 23, 29]"
-10 Saturday,Kate (Mon C shift),Roxy,Braxton (Thu C shift),Asher,Sam,8,8,28,"[3, 10, 17, 24]"
-11 Sunday,Braxton (Thu C shift),Roxy
-12 Monday,Sam,Levi (Thu C shift),Braxton (Thu C shift)
-13 Tuesday,Mitch,Roxy,Devon
-14 Wednesday,Mitch,Levi (Thu C shift)
-15 Thursday,Ella (Sat C shift),Levi (Thu C shift),Asher
-16 Friday,Mitch,Roxy,Braxton (Thu C shift)
-17 Saturday,Roxy,Mitch,Asher,Braxton (Thu C shift)
-18 Sunday,Levi (Thu C shift),Asher
-19 Monday,Sam,Braxton (Thu C shift),Ella (Sat C shift)
-20 Tuesday,Kate (Mon C shift),Levi (Thu C shift),Asher
-21 Wednesday,Kate (Mon C shift),Levi (Thu C shift)
-22 Thursday,Kate (Mon C shift),Levi (Thu C shift),Devon
-23 Friday,Kate (Mon C shift),Braxton (Thu C shift),Asher
-24 Saturday,Kate (Mon C shift),Roxy,Ella (Sat C shift),Asher
-25 Sunday,Asher,Ella (Sat C shift)
-26 Monday,Kate (Mon C shift),Roxy,Braxton (Thu C shift)
-27 Tuesday,Kate (Mon C shift),Braxton (Thu C shift),Roxy
-28 Wednesday,Kate (Mon C shift),Mitch
-29 Thursday,Mitch,Ella (Sat C shift)
+1 Thursday,Ella (Sat C shift),Kate (Mon C shift),Levi,,Asher,23,27,30,[]
+2 Friday,Kate (Mon C shift),Levi,Sam,,Aubree,27,24,30,"[1, 2, 3, 8, 9, 10, 15, 16, 17, 22, 23, 24, 29, 30]"
+3 Saturday,Braxton (Thu C shift),Asher,Kate (Mon C shift),Ella (Sat C shift),Braxton (Thu C shift),22,28,30,"[1, 7, 14, 15, 21, 28, 29]"
+4 Sunday,Ella (Sat C shift),Levi,,,Devon,14,15,20,"[2, 4, 9, 11, 16, 18, 23, 25, 26, 27, 28, 29, 30]"
+5 Monday,Kate (Mon C shift),Mitch,Aubree,,Ella (Sat C shift),28,26.0,30,"[2, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 20, 21, 23, 27, 28, 30]"
+6 Tuesday,Kate (Mon C shift),Mitch,Asher,,Kate (Mon C shift),67,62,70,"[4, 11, 16, 17, 18, 19, 25, 29, 30]"
+7 Wednesday,Sam,Aubree,,,Levi,44.0,32,50,"[3, 8, 10, 16, 17, 22, 23, 24, 25, 26, 27, 28, 29, 30]"
+8 Thursday,Kate (Mon C shift),Braxton (Thu C shift),Mitch,,Mitch,27.0,27,30,"[4, 11, 18, 20, 21, 22, 23, 24, 25, 26, 27]"
+9 Friday,Kate (Mon C shift),Mitch,Sam,,Roxy,25,31,30,"[1, 8, 15, 19, 20, 21, 22, 23, 29]"
+10 Saturday,Kate (Mon C shift),Roxy,Braxton (Thu C shift),Asher,Sam,23,30.0,30,"[3, 10, 17, 24]"
+11 Sunday,Levi,Aubree
+12 Monday,Sam,Levi,Aubree
+13 Tuesday,Devon,Roxy,Asher
+14 Wednesday,Devon,Roxy
+15 Thursday,Ella (Sat C shift),Kate (Mon C shift),Levi
+16 Friday,Mitch,Roxy,Asher
+17 Saturday,Ella (Sat C shift),Braxton (Thu C shift),Mitch,Asher
+18 Sunday,Levi,Aubree
+19 Monday,Levi,Sam,Braxton (Thu C shift)
+20 Tuesday,Levi,Kate (Mon C shift),Devon
+21 Wednesday,Levi,Kate (Mon C shift)
+22 Thursday,Kate (Mon C shift),Devon,Ella (Sat C shift)
+23 Friday,Kate (Mon C shift),Braxton (Thu C shift),Sam
+24 Saturday,Kate (Mon C shift),Asher,Devon,Ella (Sat C shift)
+25 Sunday,Sam,Roxy
+26 Monday,Kate (Mon C shift),Asher,Roxy
+27 Tuesday,Kate (Mon C shift),Aubree,Sam
+28 Wednesday,Kate (Mon C shift),Aubree
+29 Thursday,Mitch,Ella (Sat C shift),Sam
 30 Friday,Mitch,Roxy,Braxton (Thu C shift)

@@ -1,12 +1,10 @@
 import sys
 import csv
-from scheduler import Schedule, Day
-from bad_db import mentor_info
+from scheduler_tsc import Schedule, Day
+from bad_db_tsc import mentor_info
 import datetime as dt
 
 def week_day_mapper(day: Day):
-    #I hate this, but I also hate the idea of numerical keys though im  not sure if this monstrosity justifies 
-    #not using them.
     year, month, day = day.date_info.year, day.date_info.month, day.date_info.day
     week_day_map = {'Sunday': 6, 'Monday': 0, 'Tuesday': 1, 'Wednesday': 2, 'Thursday': 3, 'Friday': 4, 'Saturday': 5}
     int_date = dt.date(year, month, day).weekday()
@@ -24,7 +22,7 @@ def write_to_csv(schedule: Schedule, file_name: str):
 
     with open(file_name, 'w') as output:
         writer = csv.writer(output)
-        row = ['date', 'a_shift', 'b_shift', 'c_shift', 'backup', 'Mentor', 'Pay1 hours', 'Pay2 hours', 'Hours Wanted per pay period', 'hard dates']
+        row = ['date', 'a_shift', 'b_shift', 'c_shift', 'd_shift', 'Mentor', 'Pay1 hours', 'Pay2 hours', 'Hours Wanted per pay period', 'hard dates']
         writer.writerow(row)
         for idx, day in enumerate(schedule.assigned_days):
             weekday = week_day_mapper(day)
@@ -34,8 +32,6 @@ def write_to_csv(schedule: Schedule, file_name: str):
                     row.append('Not assigned')
                 else:
                     row.append(value)
-
-            #add mentor information if we have any mentors left
             if idx < num_mentor:
                 row = pad_or_truncate(row, 10)
                 row[5] = schedule.m1[idx].name
@@ -85,13 +81,11 @@ def valid_input(idx: int, inp: str) -> bool:
 
 if __name__ == "__main__":
     valid_in = True
-    if len(sys.argv) != 5: #Not a typo, we ignored the call to this file 
+    if len(sys.argv) != 5:
         print('must have exactly four input arguments')
     else:    
-        #check if all inputs are legal
         for i, arg in enumerate(sys.argv):
             valid_in = valid_input(i, arg) and valid_in 
-
         if valid_in:
             file_name =  sys.argv[1] + '.csv'
             write_to_csv(Schedule(int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])), file_name)

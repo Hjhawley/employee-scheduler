@@ -99,51 +99,51 @@ Note if weekdays field is empty we ignore weekday behavior.
 # July
 mentor_info = {
 	'Aubree (e.o.Saturday)': {
-		'weekdays': ['Sunday','Friday'],
+		'weekdays': ['Friday','Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,5)]+[i for i in range(6,9)]+[22],
+		'hard_dates': [],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},
     'Devon (one Sat C shift)': {
-		'weekdays': ['Sunday','Thursday','Saturday'],
+		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,9)]+[12],
+		'hard_dates': [3]+[4]+[21],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},
 	'Ella': {
-		'weekdays': ['Sunday'],
+		'weekdays': ['Sunday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,6)]+[i for i in range(12,19)]+[22]+[30]+[31],
+		'hard_dates': [1]+[i for i in range(9,15)],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Levi (one Sat C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,5)]+[i for i in range(29,32)],
+		'hard_dates': [i for i in range(1,7)]+[i for i in range(17,22)],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
 	'Mitch': {
-		'weekdays': ['Sunday'],
+		'weekdays': ['Sunday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(8,16)]+[i for i in range(20,25)],
-		'hours_wanted': 30,
+		'hard_dates': [i for i in range(13,19)]+[i for i in range(25,28)],
+		'hours_wanted': 20,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Sunday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(6,9)]+[i for i in range(14,17)],
+		'hard_dates': [i for i in range(3,8)]+[i for i in range(19,32)],
 		'hours_wanted': 30,
 		'soft_dates' : []
 	},
     'Sam': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [3]+[10]+[16]+[17]+[18],
 		'hours_wanted': 15,
 		'soft_dates' : []
 	},
@@ -157,4 +157,4 @@ holidays = {
 	'dates': [], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py july_sched 2023 7 15
+# ex: python spread_gen.py aug_sched 2023 8 15

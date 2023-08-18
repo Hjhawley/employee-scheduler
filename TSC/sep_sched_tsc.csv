@@ -1,0 +1,31 @@
+date,a_shift,b_shift,c_shift,d_shift,Mentor,Pay1 hours,Pay2 hours,Hours Wanted per pay period,hard dates
+1 Friday,Not assigned,,,,Asher,36,40,48,"[1, 4, 5, 6, 9, 11, 12, 13, 18, 19, 20, 25, 26, 27]"
+2 Saturday,Asher,,,,Avree,30,34,48,"[1, 2, 3, 4, 7, 14, 15, 16, 17, 21, 28]"
+3 Sunday,Braxton,,,,Braxton,62,68,80,"[1, 2, 8, 15, 16, 22, 29, 30]"
+4 Monday,Braxton,Not assigned
+5 Tuesday,Braxton,Avree
+6 Wednesday,Braxton,Avree
+7 Thursday,Braxton,Asher
+8 Friday,Avree
+9 Saturday,Braxton
+10 Sunday,Asher
+11 Monday,Avree,Braxton
+12 Tuesday,Avree,Braxton
+13 Wednesday,Braxton,Avree
+14 Thursday,Asher,Braxton
+15 Friday,Asher
+16 Saturday,Asher
+17 Sunday,Braxton
+18 Monday,Braxton,Avree
+19 Tuesday,Braxton,Avree
+20 Wednesday,Braxton,Avree
+21 Thursday,Braxton,Asher
+22 Friday,Asher
+23 Saturday,Braxton
+24 Sunday,Asher
+25 Monday,Braxton,Avree
+26 Tuesday,Braxton,Avree
+27 Wednesday,Braxton,Avree
+28 Thursday,Braxton,Asher
+29 Friday,Asher
+30 Saturday,Avree

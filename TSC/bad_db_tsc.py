@@ -8,30 +8,29 @@ seasonal_shift_info = {
 				},
 		'shift_info': {
 				'Sunday': {
-					'12-8_shift': 8,
+					'12-10_shift': 10,
 					}, 
 				'Monday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Tuesday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Wednesday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Thursday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Friday': {
-					'4-12_shift': 8,
+					'4-10_shift': 6,
 				},
 				'Saturday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-10_shift': 10,
 				},
 			},
 		},
@@ -43,30 +42,29 @@ seasonal_shift_info = {
 			},
 		'shift_info': {
 				'Sunday': {
-					'12-8_shift': 8,
+					'12-10_shift': 10,
 					}, 
 				'Monday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Tuesday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Wednesday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Thursday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-6_shift': 6,
+					'6-10_shift': 4,
 				},
 				'Friday': {
-					'4-12_shift': 8,
+					'4-10_shift': 6,
 				},
 				'Saturday': {
-					'12-8_shift': 8,
-					'4-12_shift': 8,
+					'12-10_shift': 10,
 				},
 			},
 		},
@@ -80,26 +78,26 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# June
+# September
 mentor_info = {
 	    'Asher': {
-		'weekdays': ['Tuesday','Wednesday'],
+		'weekdays': ['Monday','Tuesday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [14]+[20]+[23]+[24],
-		'hours_wanted': 36,
+		'hard_dates': [1]+[9],
+		'hours_wanted': 24,
 		'soft_dates' : []
 	},
     'Avree': {
-		'weekdays': ['Thursday','Friday'],
+		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [4]+[i for i in range(12,16)]+[i for i in range(22,27)],
-		'hours_wanted': 36,
+		'hard_dates': [i for i in range(1,5)]+[i for i in range(15,18)],
+		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Braxton': {
-		'weekdays': ['Sunday'],
+		'weekdays': ['Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,9)],
+		'hard_dates': [2]+[15]+[16]+[29]+[30],
 		'hours_wanted': 40,
 		'soft_dates' : []
 	},
@@ -107,9 +105,9 @@ mentor_info = {
 
 holidays = {
 	'shift_info': {
-		'holiday_shift': 8
+		'holiday_shift': []
 	},
 	'dates': [], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen_tsc.py july_sched_tsc 2023 7 15
+# ex: python spread_gen_tsc.py sep_sched_tsc 2023 9 15

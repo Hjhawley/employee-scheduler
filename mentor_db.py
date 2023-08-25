@@ -10,6 +10,7 @@ seasonal_shift_info = {
 				'Sunday': {
 					'a_shift': 10,
 					'b_shift': 10,
+                    'tsc': 9,
 					}, 
 				'Monday': {
 					'a_shift': 8,
@@ -39,7 +40,7 @@ seasonal_shift_info = {
 					'a_shift': 11,
 					'b_shift': 11,
 					'c_shift': 4,
-                    'backup': 4,
+                    'tsc': 9,
 				},
 			},
 		},
@@ -53,6 +54,7 @@ seasonal_shift_info = {
 				'Sunday': {
 					'a_shift': 9,
 					'b_shift': 9,
+                    'tsc': 9,
 					}, 
 				'Monday': {
 					'a_shift': 7,
@@ -82,7 +84,7 @@ seasonal_shift_info = {
 					'a_shift': 11,
 					'b_shift': 11,
 					'c_shift': 4,
-                    'backup': 4,
+                    'tsc': 9,
 				},
 			},
 		},
@@ -96,54 +98,68 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# September
+# October
 mentor_info = {
+    'Asher': {
+		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [],
+		'hours_wanted': 20,
+		'soft_dates' : []
+	},
+    'Avree': {
+		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
+		'weekday_behavior': ['Re'],
+		'hard_dates': [],
+		'hours_wanted': 24,
+		'soft_dates' : []
+	},
     'Devon (one Sat C shift)': {
 		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [8]+[9]+[10]+[16]+[17]+[18]+[19],
+		'hard_dates': [],
 		'hours_wanted': 18,
 		'soft_dates' : []
 	},
 	'Ella': {
 		'weekdays': ['Wednesday','Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[2]+[3]+[4],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Jonah': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[2]+[3]+[4],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Levi (one Sat C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [14]+[17],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [2]+[3]+[4]+[9],
+		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Monday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [15]+[16],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
     'Sam': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(20,25)],
+		'hard_dates': [],
 		'hours_wanted': 19,
 		'soft_dates' : []
 	},
@@ -154,7 +170,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [4], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
+	'dates': [], # add during relevant month, include only day, Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py sep_sched 2023 9 15
+# ex: python spread_gen.py oct_sched 2023 10 15

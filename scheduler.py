@@ -12,7 +12,7 @@ from calendar import monthrange
 from typing import List, Dict, Union, Tuple
 from bisect import bisect_left
 import numpy as np
-from bad_db import seasonal_shift_info, mentor_info, holidays
+from mentor_db import seasonal_shift_info, mentor_info, holidays
 
 def get_truth(inp, relate, cut):
 	ops = {'>': operator.gt,

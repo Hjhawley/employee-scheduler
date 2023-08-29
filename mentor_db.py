@@ -101,30 +101,30 @@ Note if weekdays field is empty we ignore weekday behavior.
 # October
 mentor_info = {
     'Asher': {
-		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
+		'weekdays': ['Monday','Tuesday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 20,
+		'hard_dates': [5]+[6]+[i for i in range(12,15)]+[17]+[19]+[28],
+		'hours_wanted': 8,
 		'soft_dates' : []
 	},
     'Avree': {
-		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
+		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 24,
+		'hard_dates': [11]+[12]+[13]+[22]+[i for i in range(28,32)],
+		'hours_wanted': 12,
 		'soft_dates' : []
 	},
     'Devon (one Sat C shift)': {
 		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [6]+[7]+[14]+[i for i in range(19,23)]+[28],
 		'hours_wanted': 18,
 		'soft_dates' : []
 	},
 	'Ella': {
 		'weekdays': ['Wednesday','Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [6]+[7]+[13]+[20]+[21]+[22]+[27]+[28]+[31],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
@@ -138,29 +138,29 @@ mentor_info = {
 	'Levi (one Sat C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [i for i in range(27,32)],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Sunday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 20,
+		'hard_dates': [7]+[13]+[19]+[20]+[21]+[22]+[28]+[31],
+		'hours_wanted': 16,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Monday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 24,
+		'hard_dates': [i for i in (11,16)],
+		'hours_wanted': 28,
 		'soft_dates' : []
 	},
     'Sam': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 19,
+		'hard_dates': [3]+[8]+[31],
+		'hours_wanted': 18,
 		'soft_dates' : []
 	},
 }

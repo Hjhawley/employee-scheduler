@@ -150,9 +150,9 @@ mentor_info = {
 		'soft_dates' : []
 	},
     'Roxy': {
-		'weekdays': ['Monday','Thursday'],
+		'weekdays': ['Sunday','Monday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in (11,16)],
+		'hard_dates': [i for i in range(11,16)],
 		'hours_wanted': 28,
 		'soft_dates' : []
 	},

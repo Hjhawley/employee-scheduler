@@ -98,69 +98,62 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# October
+# December
 mentor_info = {
     'Asher': {
 		'weekdays': ['Monday','Tuesday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [1]+[i for i in range(4,17)]+[i for i in range(21,32)],
 		'hours_wanted': 8,
 		'soft_dates' : []
 	},
     'Avree': {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [1]+[8]+[i for i in range(24,32)],
 		'hours_wanted': 12,
-		'soft_dates' : []
-	},
-    'Devon (one Sat C shift)': {
-		'weekdays': ['Sunday','Monday','Thursday','Saturday'],
-		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 18,
 		'soft_dates' : []
 	},
 	'Ella': {
 		'weekdays': ['Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[6]+[9]+[16]+[18]+[i for i in range(22,27)],
+		'hard_dates': [1]+[2]+[3]+[i for i in range(8,17)]+[19]+[i for i in range(21,32)],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Jonah': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [10]+[11]+[12],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Levi (one Sat C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [i for i in range(14,18)]+[i for i in range(23,32)],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Mitch': {
-		'weekdays': ['Sunday','Wednesday'],
+		'weekdays': ['Sunday','Tuesday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [7]+[10]+[11],
+		'hard_dates': [i for i in range(9,17)]+[i for i in range(20,32)],
 		'hours_wanted': 16,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Sunday','Monday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[i for i in range(23,27)],
+		'hard_dates': [i for i in range(9,17)],
 		'hours_wanted': 28,
 		'soft_dates' : []
 	},
     'Sam': {
-		'weekdays': ['Friday','Saturday'],
-		'weekday_behavior': ['Re'],
+		'weekdays': ['Sunday'],
+		'weekday_behavior': ['Inv'],
 		'hard_dates': [],
-		'hours_wanted': 18,
+		'hours_wanted': 9,
 		'soft_dates' : []
 	},
 }

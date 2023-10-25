@@ -166,4 +166,4 @@ holidays = {
 	'dates': [23]+[24], # Example: when scheduling for july add 4 to this list
 }
 
-# ex: python spread_gen.py nov_sched 2023 11 15
+# ex: python spread_gen.py dec_sched 2023 12 15

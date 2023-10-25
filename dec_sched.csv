@@ -1,0 +1,32 @@
+date,a_shift,b_shift,c_shift,tsc,Mentor,Pay1 hours,Pay2 hours,Hours Wanted per pay period,hard dates
+1 Friday,Roxy,Mitch,Not assigned,,Asher,20,9,16,"[1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+2 Saturday,Roxy,Asher,Mitch,Jonah,Avree,24,29,24,"[1, 7, 8, 14, 21, 24, 25, 26, 27, 28, 29, 30, 31]"
+3 Sunday,Sam,Asher,Levi (one Sat C shift),,Ella,19,16,48,"[1, 2, 3, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+4 Monday,Ella,Mitch,Not assigned,,Jonah,53,50,48,"[3, 10, 17, 24, 31]"
+5 Tuesday,Ella,Roxy,Levi (one Sat C shift),,Levi (one Sat C shift),51,31,48,"[2, 9, 14, 15, 16, 17, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+6 Wednesday,Roxy,Levi (one Sat C shift),,,Mitch,33,7,32,"[3, 5, 6, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+7 Thursday,Ella,Mitch,Levi (one Sat C shift),,Roxy,39,60,56,"[3, 4, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 24, 25, 28, 31]"
+8 Friday,Roxy,Mitch,Not assigned,,Sam,18,18,18,"[1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30]"
+9 Saturday,Jonah,Avree,Not assigned,Not assigned
+10 Sunday,Sam,Levi (one Sat C shift),Not assigned
+11 Monday,Levi (one Sat C shift),Jonah,Avree
+12 Tuesday,Levi (one Sat C shift),Jonah,Not assigned
+13 Wednesday,Levi (one Sat C shift),Jonah
+14 Thursday,Jonah,Not assigned,Not assigned
+15 Friday,Jonah,Avree,Not assigned
+16 Saturday,Avree,Not assigned,Not assigned,Not assigned
+17 Sunday,Ella,Asher,Avree
+18 Monday,Ella,Mitch,Levi (one Sat C shift)
+19 Tuesday,Levi (one Sat C shift),Roxy,Not assigned
+20 Wednesday,Levi (one Sat C shift),Roxy
+21 Thursday,Levi (one Sat C shift),Jonah,Not assigned
+22 Friday,Levi (one Sat C shift),Roxy,Not assigned
+23 Saturday,Roxy,Avree
+24 Sunday,Sam,Not assigned
+25 Monday,Jonah,Not assigned,Not assigned
+26 Tuesday,Roxy,Jonah,Not assigned
+27 Wednesday,Roxy,Jonah
+28 Thursday,Jonah,Not assigned,Not assigned
+29 Friday,Roxy,Jonah,Not assigned
+30 Saturday,Roxy,Jonah,Not assigned,Not assigned
+31 Sunday,Sam,Not assigned,Not assigned

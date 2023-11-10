@@ -10,7 +10,6 @@ seasonal_shift_info = {
 				'Sunday': {
 					'a_shift': 10,
 					'b_shift': 10,
-                    'tsc': 9,
 					},
 				'Monday': {
 					'a_shift': 8,
@@ -40,7 +39,6 @@ seasonal_shift_info = {
 					'a_shift': 11,
 					'b_shift': 11,
 					'c_shift': 4,
-                    'tsc': 9,
 				},
 			},
 		},
@@ -54,7 +52,6 @@ seasonal_shift_info = {
 				'Sunday': {
 					'a_shift': 9,
 					'b_shift': 9,
-                    'tsc': 9,
 					},
 				'Monday': {
 					'a_shift': 7,
@@ -84,7 +81,6 @@ seasonal_shift_info = {
 					'a_shift': 11,
 					'b_shift': 11,
 					'c_shift': 4,
-                    'tsc': 9,
 				},
 			},
 		},
@@ -177,7 +173,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [23]+[24], # Example: when scheduling for july add 4 to this list
+	'dates': [24]+[25], # Example: when scheduling for July, add 4 to this list
 }
 
 # ex: python spread_gen.py dec_sched 2023 12 15

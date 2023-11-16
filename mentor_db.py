@@ -111,9 +111,9 @@ mentor_info = {
 		'soft_dates' : []
 	},
     'Avree': {
-		'weekdays': ['Thursday'],
+		'weekdays': [],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[8]+[i for i in range(24,32)],
+		'hard_dates': [i for i in range(24,32)],
 		'hours_wanted': 28,
 		'soft_dates' : []
 	},
@@ -148,14 +148,14 @@ mentor_info = {
 	'Mitch': {
 		'weekdays': ['Sunday','Tuesday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(9,17)]+[i for i in range(20,32)],
+		'hard_dates': [i for i in range(8,17)]+[i for i in range(20,32)],
 		'hours_wanted': 16,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Sunday','Monday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(9,17)],
+		'hard_dates': [i for i in range(8,17)],
 		'hours_wanted': 28,
 		'soft_dates' : []
 	},

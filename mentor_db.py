@@ -94,66 +94,66 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# December
+# January
 mentor_info = {
     'Asher': {
-		'weekdays': ['Monday','Tuesday','Wednesday'],
+		'weekdays': ['Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[i for i in range(4,17)]+[i for i in range(21,32)],
-		'hours_wanted': 28,
+		'hard_dates': [],
+		'hours_wanted': 55, # Wants 24-30 per week in Jan
 		'soft_dates' : []
 	},
     'Ashley': {
 		'weekdays': ['Thursday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [24]+[25],
-		'hours_wanted': 24,
+		'hard_dates': [],
+		'hours_wanted': 30,
 		'soft_dates' : []
 	},
     'Avree': {
 		'weekdays': [],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(24,32)],
+		'hard_dates': [],
 		'hours_wanted': 28,
 		'soft_dates' : []
 	},
 	'Braxton': {
-		'weekdays': ['Sunday','Saturday'],
+		'weekdays': [],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(22,28)],
+		'hard_dates': [],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
     'Ella': {
-		'weekdays': ['Wednesday'],
+		'weekdays': [],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[2]+[3]+[i for i in range(8,17)]+[19]+[i for i in range(21,32)],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Jonah': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(15,19)],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Levi (one Sat C shift)': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(14,18)]+[i for i in range(23,32)],
+		'hard_dates': [],
 		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Mitch': {
-		'weekdays': ['Sunday','Tuesday','Wednesday'],
+		'weekdays': [],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(8,17)]+[i for i in range(20,32)],
 		'hours_wanted': 16,
 		'soft_dates' : []
 	},
     'Roxy': {
-		'weekdays': ['Sunday','Monday','Thursday'],
+		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(8,17)],
 		'hours_wanted': 28,
@@ -176,4 +176,4 @@ holidays = {
 	'dates': [24]+[25], # Example: when scheduling for July, add 4 to this list
 }
 
-# ex: python spread_gen.py dec_sched 2023 12 15
+# ex: python spread_gen.py jan_sched 2024 1 15

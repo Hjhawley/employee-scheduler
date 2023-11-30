@@ -100,7 +100,7 @@ mentor_info = {
 		'weekdays': ['Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [4]+[5],
-		'hours_wanted': 25, # Wants 24-30 per week in Jan
+		'hours_wanted': 20, # Wants 24-30 per week in Jan
 		'soft_dates' : []
 	},
     'Ashley': {
@@ -121,7 +121,7 @@ mentor_info = {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [i for i in range(13,17)]+[20]+[21],
-		'hours_wanted': 20,
+		'hours_wanted': 25, # Prioritize Braxton's hours as per seniority
 		'soft_dates' : []
 	},
     'Ella': {
@@ -149,7 +149,7 @@ mentor_info = {
 		'weekdays': ['Tuesday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [4]+[5]+[6]+[11],
-		'hours_wanted': 15,
+		'hours_wanted': 10,
 		'soft_dates' : []
 	},
     'Roxy': {

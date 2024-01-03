@@ -136,22 +136,19 @@ class Day():
 		return self.total_hours - self.assigned_hours
 
 	def get_season(self) -> str:
-		"""get season to which this day belongs"""
-		for season, season_info in seasonal_shift_info.items():
+		"""Get season to which this day belongs based on the month."""
+		month = self.date_info.month
 
-			start_date = season_info.copy()['dates']['start'].date()
-			end_date = season_info.copy()['dates']['end'].date() 
+		# Define the months corresponding to each season
+		summer_months = [5, 6, 7]  # May, June, July
+		winter_months = [8, 9, 10, 11, 12, 1, 2, 3, 4]  # August to April
 
-			cur_year = self.date_info.date().year
-
-			if self.date_info.date() >= start_date and self.date_info.date() <= end_date:
-				return season
-			
-			if self.date_info.date().replace(year =cur_year + 1) >= start_date and self.date_info.date().replace(year =cur_year + 1) <= end_date:
-				return season
-		
-		
-		raise ValueError('Could not find season that matched given date')
+		if month in summer_months:
+			return 'summer'
+		elif month in winter_months:
+			return 'winter'
+		else:
+			raise ValueError('Could not find season that matched given date')
 	
 	def get_shifts(self, season: str, day: int) -> Dict[str, int]:
 		"""get the shifts required for this day"""

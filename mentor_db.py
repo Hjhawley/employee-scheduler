@@ -94,41 +94,41 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
-# January
+# February
 mentor_info = {
     'Asher': {
-		'weekdays': ['Monday','Wednesday'],
+		'weekdays': ['Thursday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [4]+[5],
+		'hard_dates': [8]+[10]+[16],
 		'hours_wanted': 20, # Wants 24-30 per week in Jan
 		'soft_dates' : []
 	},
     'Ashley': {
 		'weekdays': ['Thursday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 20,
+		'hard_dates': [14],
+		'hours_wanted': 25,
 		'soft_dates' : []
 	},
     'Avree': {
 		'weekdays': ['Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,5)]+[20]+[21]+[22]+[27],
+		'hard_dates': [14]+[19]+[22],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Braxton': {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(13,17)]+[20]+[21],
+		'hard_dates': [],
 		'hours_wanted': 25, # Prioritize Braxton's hours as per seniority
 		'soft_dates' : []
 	},
     'Ella': {
 		'weekdays': ['Sunday','Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(1,5)]+[6]+[11]+[13]+[14]+[15]+[20]+[i for i in range(25,29)],
-		'hours_wanted': 25,
+		'hard_dates': [1]+[3]+[8]+[10]+[15]+[17]+[i for i in range(22,26)]+[29],
+		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Jonah': {
@@ -148,14 +148,14 @@ mentor_info = {
 	'Mitch': {
 		'weekdays': ['Tuesday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [4]+[5]+[6]+[11],
+		'hard_dates': [1]+[3]+[8]+[9]+[17]+[23]+[24],
 		'hours_wanted': 10,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [i for i in range(8,17)],
+		'hard_dates': [],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
@@ -176,4 +176,4 @@ holidays = {
 	'dates': [1], # Example: when scheduling for July, add 4 to this list
 }
 
-# ex: python spread_gen.py jan_sched 2024 1 15
+# ex: python spread_gen.py feb_sched 2024 1 14

@@ -94,13 +94,14 @@ seasonal_shift_info = {
 	
 Note if weekdays field is empty we ignore weekday behavior.
 """
+
 # February
 mentor_info = {
     'Asher': {
 		'weekdays': ['Thursday','Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [8]+[10]+[16],
-		'hours_wanted': 20, # Wants 24-30 per week in Jan
+		'hours_wanted': 16, # Wants 24-30 per week in Jan
 		'soft_dates' : []
 	},
     'Ashley': {
@@ -121,41 +122,41 @@ mentor_info = {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 25, # Prioritize Braxton's hours as per seniority
+		'hours_wanted': 26, # Prioritize Braxton's hours as per seniority
 		'soft_dates' : []
 	},
     'Ella': {
 		'weekdays': ['Sunday','Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [1]+[3]+[8]+[10]+[15]+[17]+[i for i in range(22,26)]+[29],
-		'hours_wanted': 20,
+		'hours_wanted': 21,
 		'soft_dates' : []
 	},
 	'Jonah': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 20,
+		'hours_wanted': 19,
 		'soft_dates' : []
 	},
-	'Levi (one Sat C shift)': {
+	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 25,
+		'hours_wanted': 24,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Tuesday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [1]+[3]+[8]+[9]+[17]+[23]+[24],
-		'hours_wanted': 10,
+		'hours_wanted': 14,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [8]+[16]+[28],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},

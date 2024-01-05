@@ -139,9 +139,8 @@ class Day():
 		"""Get season to which this day belongs based on the month."""
 		month = self.date_info.month
 
-		# Define the months corresponding to each season
 		summer_months = [5, 6, 7]  # May, June, July
-		winter_months = [8, 9, 10, 11, 12, 1, 2, 3, 4]  # August to April
+		winter_months = [8, 9, 10, 11, 12, 1, 2, 3, 4]  # Every other month
 
 		if month in summer_months:
 			return 'summer'

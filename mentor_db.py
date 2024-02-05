@@ -95,68 +95,68 @@ seasonal_shift_info = {
 Note if weekdays field is empty we ignore weekday behavior.
 """
 
-# February
+# March
 mentor_info = {
     'Asher': {
-		'weekdays': ['Thursday','Wednesday'],
+		'weekdays': ['Monday','Thursday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [8]+[10]+[16],
+		'hard_dates': [9]+[i for i in range(11,16)],
 		'hours_wanted': 16, # Wants 24-30 per week in Jan
 		'soft_dates' : []
 	},
     'Ashley': {
 		'weekdays': ['Thursday','Friday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [14],
+		'hard_dates': [],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
     'Avree': {
 		'weekdays': ['Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [14]+[19]+[22],
+		'hard_dates': [4]+[i for i in range(9,17)],
 		'hours_wanted': 20,
 		'soft_dates' : []
 	},
 	'Braxton': {
 		'weekdays': ['Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
+		'hard_dates': [i for i in range(10,17)],
 		'hours_wanted': 26, # Prioritize Braxton's hours as per seniority
 		'soft_dates' : []
 	},
     'Ella': {
 		'weekdays': ['Sunday','Monday','Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[3]+[8]+[10]+[15]+[17]+[i for i in range(22,26)]+[29],
+		'hard_dates': [2]+[i for i in range(8,18)]+[23]+[24]+[29]+[30]+[31],
 		'hours_wanted': 21,
 		'soft_dates' : []
 	},
 	'Jonah': {
 		'weekdays': ['Sunday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [],
-		'hours_wanted': 19,
+		'hard_dates': [2],
+		'hours_wanted': 18,
 		'soft_dates' : []
 	},
 	'Levi': {
 		'weekdays': ['Saturday'],
 		'weekday_behavior': ['Re'],
 		'hard_dates': [],
-		'hours_wanted': 24,
+		'hours_wanted': 16,
 		'soft_dates' : []
 	},
 	'Mitch': {
 		'weekdays': ['Tuesday', 'Wednesday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [1]+[3]+[8]+[9]+[17]+[23]+[24],
-		'hours_wanted': 14,
+		'hard_dates': [i for i in range(10,18)]+[27]+[28],
+		'hours_wanted': 16,
 		'soft_dates' : []
 	},
     'Roxy': {
 		'weekdays': ['Tuesday','Thursday'],
 		'weekday_behavior': ['Re'],
-		'hard_dates': [8]+[16]+[28],
+		'hard_dates': [],
 		'hours_wanted': 25,
 		'soft_dates' : []
 	},
@@ -174,7 +174,7 @@ holidays = {
 		'holiday_a_shift': 9,
 		'holiday_b_shift': 9
 	},
-	'dates': [1], # Example: when scheduling for July, add 4 to this list
+	'dates': [], # Example: when scheduling for July, add 4 to this list
 }
 
-# ex: python spread_gen.py feb_sched 2024 2 14
+# ex: python spread_gen.py mar_sched 2024 3 15

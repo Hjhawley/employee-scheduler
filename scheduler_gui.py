@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import messagebox, ttk
+from tkinter import messagebox, ttk, simpledialog
+import json
 import subprocess
 
 SPREAD_GEN_SCRIPT = 'spread_gen.py'
@@ -28,14 +29,94 @@ class MentorSchedulerGUI:
         self.month_var = tk.StringVar()
         self.month_dropdown = ttk.Combobox(self.root, textvariable=self.month_var, values=self.months, state="readonly")
         self.month_dropdown.grid(row=3, column=1)
-        self.month_var.set('January')  # Default value
         
         # Generate Button
         tk.Button(self.root, text="Generate Schedule", command=self.generate_schedule).grid(row=4, columnspan=2)
 
     def edit_mentor_info(self):
-        # Placeholder for mentor info editing functionality
-        messagebox.showinfo("Edit Mentor Info", "This feature is under construction.")
+        # Open the JSON file and read the mentor information
+        with open('mentor_db.json', 'r') as file:
+            self.mentor_data = json.load(file)
+        
+        self.mentor_names = ["New Mentor"] + list(self.mentor_data['mentor_info'].keys())
+        
+        # Create a new window for editing mentor information
+        self.edit_window = tk.Toplevel(self.root)
+        self.edit_window.title("Edit Mentor Information")
+
+        # Dropdown menu to select an existing mentor to edit
+        tk.Label(self.edit_window, text="Select Mentor:").grid(row=0, column=0)
+        self.selected_mentor_var = tk.StringVar(self.edit_window)
+        self.selected_mentor_var.set(self.mentor_names[0])  # Set to 'New Mentor'
+        self.mentor_dropdown = ttk.Combobox(self.edit_window, textvariable=self.selected_mentor_var, values=self.mentor_names, state="readonly")
+        self.mentor_dropdown.grid(row=0, column=1)
+        self.mentor_dropdown.bind('<<ComboboxSelected>>', self.load_mentor_info)
+
+        # Entry fields for mentor information
+        self.name_entry = self.create_label_entry("Name:", 1)
+        self.weekdays_entry = self.create_label_entry("Weekdays unavailable (comma separated):", 2)
+        self.hard_dates_entry = self.create_label_entry("Dates unavailable (comma separated):", 3)
+        self.hours_wanted_entry = self.create_label_entry("Hours Wanted:", 4)
+        self.soft_dates_entry = self.create_label_entry("Soft Dates (comma separated):", 5)
+
+        # Save button to save edited information or add a new mentor
+        self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info)
+        self.save_button.grid(row=6, column=1)
+
+    def create_label_entry(self, label_text, row):
+        tk.Label(self.edit_window, text=label_text).grid(row=row, column=0)
+        entry = tk.Entry(self.edit_window)
+        entry.grid(row=row, column=1)
+        return entry
+
+    def load_mentor_info(self, event):
+        # Load the selected mentor's information into the entry fields for editing
+        selected_mentor_name = self.selected_mentor_var.get()
+        if selected_mentor_name == "New Mentor":
+            self.name_entry.delete(0, tk.END)
+            self.weekdays_entry.delete(0, tk.END)
+            self.hard_dates_entry.delete(0, tk.END)
+            self.hours_wanted_entry.delete(0, tk.END)
+            self.soft_dates_entry.delete(0, tk.END)
+        else:
+            mentor_info = self.mentor_data['mentor_info'][selected_mentor_name]
+            self.name_entry.delete(0, tk.END)
+            self.name_entry.insert(0, selected_mentor_name)
+            self.weekdays_entry.delete(0, tk.END)
+            self.weekdays_entry.insert(0, ','.join(mentor_info.get('weekdays', [])))
+            self.hard_dates_entry.delete(0, tk.END)
+            self.hard_dates_entry.insert(0, ','.join(map(str, mentor_info.get('hard_dates', []))))
+            self.hours_wanted_entry.delete(0, tk.END)
+            self.hours_wanted_entry.insert(0, mentor_info.get('hours_wanted', ''))
+            self.soft_dates_entry.delete(0, tk.END)
+            self.soft_dates_entry.insert(0, ','.join(map(str, mentor_info.get('soft_dates', []))))
+
+    def save_mentor_info(self):
+        # Logic to save the edited information back to the JSON file
+        name = self.name_entry.get()
+        weekdays = self.weekdays_entry.get().split(',')
+        hard_dates = list(map(int, self.hard_dates_entry.get().split(',')))
+        hours_wanted = int(self.hours_wanted_entry.get())
+        soft_dates = list(map(int, self.soft_dates_entry.get().split(',')))
+
+        if not name:
+            messagebox.showerror("Error", "The name field cannot be empty.")
+            return
+
+        # Replace or add the mentor information
+        self.mentor_data['mentor_info'][name] = {
+            "weekdays": weekdays,
+            "hard_dates": hard_dates,
+            "hours_wanted": hours_wanted,
+            "soft_dates": soft_dates
+        }
+
+        # Save the updated mentor data back to the JSON file
+        with open('mentor_db.json', 'w') as file:
+            json.dump(self.mentor_data, file, indent=4)
+
+        messagebox.showinfo("Success", "Mentor information saved successfully.")
+        self.edit_window.destroy()
 
     def generate_schedule(self):
         schedule_name = self.schedule_name_entry.get()

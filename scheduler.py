@@ -1,18 +1,16 @@
-"""
-metrics:
-	hours wanted per pay period: 5
-	availability days: 3
-	consecutive days (5 bad 6+ terrible) 3
-	variety: every mentor should work with everyone else at least once: 1
-	bleed-over: Have at least 1 mentor from the previous day working
-"""
+import json
 import datetime as dt
 import operator
 from calendar import monthrange
 from typing import List, Dict, Union, Tuple
 from bisect import bisect_left
 import numpy as np
-from mentor_db import seasonal_shift_info, mentor_info, holidays
+
+with open('mentor_db.json', 'r') as file:
+    data = json.load(file)
+    seasonal_shift_info = data['seasonal_shift_info']
+    mentor_info = data['mentor_info']
+    holidays = data['holidays']
 
 def get_truth(inp, relate, cut):
 	ops = {'>': operator.gt,

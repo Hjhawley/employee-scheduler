@@ -11,7 +11,7 @@ class MentorSchedulerGUI:
         self.root.title('Mentor Scheduler')
         
         # Mentor Management Section
-        tk.Button(self.root, text="Add/Edit Mentor Info", command=self.edit_mentor_info).grid(row=0, columnspan=2)
+        tk.Button(self.root, text="Edit Mentor Info", command=self.edit_mentor_info).grid(row=0, columnspan=2)
         
         # Schedule Name
         tk.Label(self.root, text="Schedule Name:").grid(row=1, column=0)
@@ -54,14 +54,23 @@ class MentorSchedulerGUI:
 
         # Entry fields for mentor information
         self.name_entry = self.create_label_entry("Name:", 1)
-        self.weekdays_entry = self.create_label_entry("Weekdays unavailable (comma separated):", 2)
-        self.hard_dates_entry = self.create_label_entry("Dates unavailable (comma separated):", 3)
-        self.hours_wanted_entry = self.create_label_entry("Hours Wanted:", 4)
-        self.soft_dates_entry = self.create_label_entry("Soft Dates (comma separated):", 5)
-
+        
+        # Replace the weekdays_entry with checkboxes
+        self.weekdays_checkboxes = {}
+        row = 2
+        for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]:
+            self.weekdays_checkboxes[day] = tk.BooleanVar()
+            tk.Checkbutton(self.edit_window, text=day, variable=self.weekdays_checkboxes[day]).grid(row=row, column=0, sticky='w')
+            row += 1
+        
+        self.hard_dates_entry = self.create_label_entry("Dates unavailable (comma separated):", row)
+        row += 1
+        self.hours_wanted_entry = self.create_label_entry("Hours Wanted:", row)
+        row += 1
+        
         # Save button to save edited information or add a new mentor
         self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info)
-        self.save_button.grid(row=6, column=1)
+        self.save_button.grid(row=row + 1, column=1)
 
     def create_label_entry(self, label_text, row):
         tk.Label(self.edit_window, text=label_text).grid(row=row, column=0)
@@ -77,38 +86,38 @@ class MentorSchedulerGUI:
             self.weekdays_entry.delete(0, tk.END)
             self.hard_dates_entry.delete(0, tk.END)
             self.hours_wanted_entry.delete(0, tk.END)
-            self.soft_dates_entry.delete(0, tk.END)
         else:
             mentor_info = self.mentor_data['mentor_info'][selected_mentor_name]
             self.name_entry.delete(0, tk.END)
             self.name_entry.insert(0, selected_mentor_name)
-            self.weekdays_entry.delete(0, tk.END)
-            self.weekdays_entry.insert(0, ','.join(mentor_info.get('weekdays', [])))
+            for day in self.weekdays_checkboxes:
+                self.weekdays_checkboxes[day].set(day in mentor_info.get('weekdays', []))
             self.hard_dates_entry.delete(0, tk.END)
             self.hard_dates_entry.insert(0, ','.join(map(str, mentor_info.get('hard_dates', []))))
             self.hours_wanted_entry.delete(0, tk.END)
             self.hours_wanted_entry.insert(0, mentor_info.get('hours_wanted', ''))
-            self.soft_dates_entry.delete(0, tk.END)
-            self.soft_dates_entry.insert(0, ','.join(map(str, mentor_info.get('soft_dates', []))))
 
     def save_mentor_info(self):
         # Logic to save the edited information back to the JSON file
         name = self.name_entry.get()
-        weekdays = self.weekdays_entry.get().split(',')
-        hard_dates = list(map(int, self.hard_dates_entry.get().split(',')))
-        hours_wanted = int(self.hours_wanted_entry.get())
-        soft_dates = list(map(int, self.soft_dates_entry.get().split(',')))
+        weekdays = [day for day, var in self.weekdays_checkboxes.items() if var.get()]
+        hard_dates = [int(date.strip()) for date in self.hard_dates_entry.get().split(',') if date.strip()]
+        hours_wanted = int(self.hours_wanted_entry.get()) if self.hours_wanted_entry.get().strip() else 0
 
         if not name:
             messagebox.showerror("Error", "The name field cannot be empty.")
             return
 
+        # By default, set weekday_behavior to 'Re' if it is not already present
+        weekday_behavior = self.mentor_data['mentor_info'].get(name, {}).get('weekday_behavior', ['Re'])
+
         # Replace or add the mentor information
         self.mentor_data['mentor_info'][name] = {
             "weekdays": weekdays,
+            "weekday_behavior": weekday_behavior,
             "hard_dates": hard_dates,
             "hours_wanted": hours_wanted,
-            "soft_dates": soft_dates
+            "soft_dates": []
         }
 
         # Save the updated mentor data back to the JSON file

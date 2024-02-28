@@ -54,11 +54,10 @@ class MentorSchedulerGUI:
 
         # Entry fields for mentor information
         self.name_entry = self.create_label_entry("Name:", 1)
-        
-        # Replace the weekdays_entry with checkboxes
+        tk.Label(self.edit_window, text="Weekdays unavailable:").grid(row=2, column=0, sticky='w', columnspan=2)        
         self.weekdays_checkboxes = {}
-        row = 2
-        for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]:
+        row = 3
+        for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
             self.weekdays_checkboxes[day] = tk.BooleanVar()
             tk.Checkbutton(self.edit_window, text=day, variable=self.weekdays_checkboxes[day]).grid(row=row, column=0, sticky='w')
             row += 1

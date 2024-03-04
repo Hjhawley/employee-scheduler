@@ -35,7 +35,7 @@ class MentorSchedulerGUI:
 
     def edit_mentor_info(self):
         # Open the JSON file and read the mentor information
-        with open('mentor_db.json', 'r') as file:
+        with open('mentor_info.json', 'r') as file:
             self.mentor_data = json.load(file)
         
         self.mentor_names = ["New Mentor"] + list(self.mentor_data['mentor_info'].keys())
@@ -64,7 +64,7 @@ class MentorSchedulerGUI:
         
         self.hard_dates_entry = self.create_label_entry("Dates unavailable (comma separated):", row)
         row += 1
-        self.hours_wanted_entry = self.create_label_entry("Hours Wanted:", row)
+        self.hours_wanted_entry = self.create_label_entry("Hours wanted per week:", row)
         row += 1
         
         # Save button to save edited information or add a new mentor
@@ -120,7 +120,7 @@ class MentorSchedulerGUI:
         }
 
         # Save the updated mentor data back to the JSON file
-        with open('mentor_db.json', 'w') as file:
+        with open('mentor_info.json', 'w') as file:
             json.dump(self.mentor_data, file, indent=4)
 
         messagebox.showinfo("Success", "Mentor information saved successfully.")

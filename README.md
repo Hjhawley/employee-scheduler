@@ -1,6 +1,6 @@
 # How to use the schedule generator
 
-Edit 'mentor_db.py' to enter mentor info. For example, 'weekdays': ['Monday','Wednesday'], 'weekday_behavior': ['Re'] will make sure that a mentor is not scheduled on Mondays or Wednesdays. 'hard_dates': [2]+[23] will make sure they are not scheduled on the 2nd or the 23rd. Adjusting 'hours_wanted' (per week) will try to give more hours to the mentors who want them.
+Edit 'mentor_info.json' to enter mentor info. For example, 'weekdays': ['Monday','Wednesday'], 'weekday_behavior': ['Re'] will make sure that a mentor is not scheduled on Mondays or Wednesdays. 'hard_dates': [2]+[23] will make sure they are not scheduled on the 2nd or the 23rd. Adjusting 'hours_wanted' (per week) will try to give more hours to the mentors who want them.
 
 Use following command:
 >python spread_gen.py [filename] [year] [month] [pay period length]

@@ -6,7 +6,7 @@ from typing import List, Dict, Union, Tuple
 from bisect import bisect_left
 import numpy as np
 
-with open('mentor_db.json', 'r') as file:
+with open('mentor_info.json', 'r') as file:
     data = json.load(file)
     seasonal_shift_info = data['seasonal_shift_info']
     mentor_info = data['mentor_info']

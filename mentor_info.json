@@ -86,20 +86,22 @@
     "mentor_info": {
         "Asher": {
             "weekdays": [
-                "Monday",
-                "Thursday",
-                "Wednesday"
+                "Wednesday",
+                "Thursday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
             "hard_dates": [
+                8,
                 9,
+                10,
                 11,
                 12,
                 13,
                 14,
-                15
+                19,
+                20
             ],
             "hours_wanted": 16,
             "soft_dates": []
@@ -112,7 +114,11 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                10,
+                20,
+                22
+            ],
             "hours_wanted": 25,
             "soft_dates": []
         },
@@ -125,41 +131,32 @@
                 "Re"
             ],
             "hard_dates": [
-                4,
-                9,
+                1,
                 10,
                 11,
-                12,
-                13,
-                14,
-                15,
-                16
+                19,
+                22
             ],
             "hours_wanted": 20,
             "soft_dates": []
         },
         "Braxton": {
             "weekdays": [
-                "Thursday"
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16
-            ],
-            "hours_wanted": 26,
+            "hard_dates": [],
+            "hours_wanted": 15,
             "soft_dates": []
         },
         "Ella": {
             "weekdays": [
-                "Sunday",
                 "Monday",
                 "Wednesday"
             ],
@@ -167,22 +164,13 @@
                 "Re"
             ],
             "hard_dates": [
-                2,
-                8,
-                9,
-                10,
-                11,
-                12,
                 13,
-                14,
-                15,
-                16,
-                17,
-                23,
-                24,
-                29,
-                30,
-                31
+                19,
+                20,
+                25,
+                26,
+                27,
+                28
             ],
             "hours_wanted": 21,
             "soft_dates": []
@@ -195,7 +183,11 @@
                 "Re"
             ],
             "hard_dates": [
-                2
+                6,
+                7,
+                8,
+                9,
+                10
             ],
             "hours_wanted": 18,
             "soft_dates": []
@@ -220,16 +212,10 @@
                 "Re"
             ],
             "hard_dates": [
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                27,
-                28
+                1,
+                5,
+                6,
+                10
             ],
             "hours_wanted": 16,
             "soft_dates": []

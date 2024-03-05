@@ -58,7 +58,7 @@ class MentorSchedulerGUI:
             tk.Checkbutton(self.edit_window, text=day, variable=self.weekdays_checkboxes[day]).grid(row=row, column=0, sticky='w')
             row += 1
         
-        self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info)
+        self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info, width=20)
         self.save_button.grid(row=row + 1, columnspan=2)
 
     def create_label_entry(self, label_text, row):

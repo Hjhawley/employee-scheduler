@@ -28,7 +28,11 @@ class MentorSchedulerGUI:
         self.month_dropdown = ttk.Combobox(self.root, textvariable=self.month_var, values=self.months, state="readonly", width=entry_width - 4)  # ttk.Combobox has different padding, hence the -4
         self.month_dropdown.grid(row=3, column=1)
         
-        tk.Button(self.root, text="Generate Schedule", command=self.generate_schedule).grid(row=4, columnspan=2)
+        tk.Label(self.root, text="Holidays:").grid(row=4, column=0, sticky='e')
+        self.holiday_entry = tk.Entry(self.root, width=entry_width)
+        self.holiday_entry.grid(row=4, column=1)
+        
+        tk.Button(self.root, text="Generate Schedule", command=self.generate_schedule).grid(row=5, columnspan=2)
 
     def edit_mentor_info(self):
         with open('mentor_info.json', 'r') as file:

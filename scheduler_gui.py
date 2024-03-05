@@ -5,7 +5,22 @@ import subprocess
 
 SPREAD_GEN_SCRIPT = 'spread_gen.py'
 
-entry_width = 30
+NATIONAL_HOLIDAYS = {
+    'January': '1',
+    'February': '',
+    'March': '',
+    'April': '',
+    'May': '',
+    'June': '19',
+    'July': '4,24',
+    'August': '',
+    'September': '',
+    'October': '',
+    'November': '',
+    'December': '24,25,31',
+}
+
+ENTRY_WIDTH = 30
 
 class MentorSchedulerGUI:
     def __init__(self, root):
@@ -15,32 +30,39 @@ class MentorSchedulerGUI:
         tk.Button(self.root, text="Edit Mentor Info", command=self.edit_mentor_info).grid(row=0, columnspan=2)
         
         tk.Label(self.root, text="Schedule Name:").grid(row=1, column=0, sticky='e')
-        self.schedule_name_entry = tk.Entry(self.root, width=entry_width)
+        self.schedule_name_entry = tk.Entry(self.root, width=ENTRY_WIDTH)
         self.schedule_name_entry.grid(row=1, column=1)
         
         tk.Label(self.root, text="Year:").grid(row=2, column=0, sticky='e')
-        self.year_entry = tk.Entry(self.root, width=entry_width)
+        self.year_entry = tk.Entry(self.root, width=ENTRY_WIDTH)
         self.year_entry.grid(row=2, column=1)
         
         tk.Label(self.root, text="Month:").grid(row=3, column=0, sticky='e')
         self.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         self.month_var = tk.StringVar()
-        self.month_dropdown = ttk.Combobox(self.root, textvariable=self.month_var, values=self.months, state="readonly", width=entry_width - 4)  # ttk.Combobox has different padding, hence the -4
+        self.month_dropdown = ttk.Combobox(self.root, textvariable=self.month_var, values=self.months, state="readonly", width=ENTRY_WIDTH - 4)  # ttk.Combobox has different padding, hence the -4
+        self.month_dropdown.bind('<<ComboboxSelected>>', self.on_month_changed)
         self.month_dropdown.grid(row=3, column=1)
         
         tk.Label(self.root, text="Holidays:").grid(row=4, column=0, sticky='e')
-        self.holiday_entry = tk.Entry(self.root, width=entry_width)
+        self.holiday_entry = tk.Entry(self.root, width=ENTRY_WIDTH)
         self.holiday_entry.grid(row=4, column=1)
         
         tk.Button(self.root, text="Generate Schedule", command=self.generate_schedule).grid(row=5, columnspan=2)
 
+    def on_month_changed(self, event):
+        selected_month = self.month_var.get()
+        holidays = NATIONAL_HOLIDAYS.get(selected_month, '')
+        self.holiday_entry.delete(0, tk.END)
+        self.holiday_entry.insert(0, holidays)
+    
     def edit_mentor_info(self):
         with open('mentor_info.json', 'r') as file:
             self.mentor_data = json.load(file)
         
         self.mentor_names = ["New Mentor"] + list(self.mentor_data['mentor_info'].keys())
         
-        self.edit_window = tk.Toplevel(self.root, width=entry_width)
+        self.edit_window = tk.Toplevel(self.root, width=ENTRY_WIDTH)
         self.edit_window.title("Edit Mentor Information")
 
         tk.Label(self.edit_window, text="Select Mentor:").grid(row=0, column=0, sticky='e')
@@ -129,6 +151,12 @@ class MentorSchedulerGUI:
             "soft_dates": []
         }
 
+        holiday_dates_str = self.holiday_entry.get().strip()
+        if holiday_dates_str:
+            holiday_dates = [int(date.strip()) for date in holiday_dates_str.split(',') if date.strip().isdigit()]
+        else:
+            holiday_dates = []
+        self.mentor_data['holidays']['dates'] = holiday_dates
         with open('mentor_info.json', 'w') as file:
             json.dump(self.mentor_data, file, indent=4)
 
@@ -139,6 +167,18 @@ class MentorSchedulerGUI:
         schedule_name = self.schedule_name_entry.get().strip()
         year = self.year_entry.get().strip()
         month_name = self.month_var.get().strip()
+
+        holiday_dates_str = self.holiday_entry.get().strip()
+        if holiday_dates_str:
+            holiday_dates = [int(date.strip()) for date in holiday_dates_str.split(',') if date.strip().isdigit()]
+        else:
+            holiday_dates = []
+        with open('mentor_info.json', 'r') as file:
+            mentor_data = json.load(file)
+        mentor_data['holidays']['dates'] = holiday_dates
+        with open('mentor_info.json', 'w') as file:
+            json.dump(mentor_data, file, indent=4)
+
         if not schedule_name:
             messagebox.showerror("Error", "Please enter a schedule name.")
             return
@@ -150,7 +190,6 @@ class MentorSchedulerGUI:
             return
         month = str(self.months.index(month_name) + 1)  # Convert month name to month number
         pay_period_length = '15'  # Hardcoded to always be 15
-        # Call spread_gen.py with subprocess
         try:
             subprocess.run(['python', SPREAD_GEN_SCRIPT, schedule_name, year, month, pay_period_length], check=True)
             messagebox.showinfo("Success", "Schedule generated successfully.")

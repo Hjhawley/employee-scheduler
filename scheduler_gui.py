@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, ttk, simpledialog
+from tkinter import messagebox, ttk
 import json
 import subprocess
 
@@ -132,16 +132,28 @@ class MentorSchedulerGUI:
         self.edit_window.destroy()
 
     def generate_schedule(self):
-        schedule_name = self.schedule_name_entry.get()
-        year = self.year_entry.get()
-        month = str(self.months.index(self.month_var.get()) + 1)
+        schedule_name = self.schedule_name_entry.get().strip()
+        year = self.year_entry.get().strip()
+        month_name = self.month_var.get().strip()
+        if not schedule_name:
+            messagebox.showerror("Error", "Please enter a schedule name.")
+            return
+        if not year.isdigit() or len(year) != 4:
+            messagebox.showerror("Error", "Please enter a valid year.")
+            return
+        if month_name not in self.months:
+            messagebox.showerror("Error", "Please select a valid month.")
+            return
+        month = str(self.months.index(month_name) + 1)  # Convert month name to month number
         pay_period_length = '15'  # Hardcoded to always be 15
-        
+        # Call spread_gen.py with subprocess
         try:
             subprocess.run(['python', SPREAD_GEN_SCRIPT, schedule_name, year, month, pay_period_length], check=True)
             messagebox.showinfo("Success", "Schedule generated successfully.")
         except subprocess.CalledProcessError as e:
-            messagebox.showerror("Error", "Failed to generate schedule.")
+            messagebox.showerror("Error", f"Failed to generate schedule. Error: {e}")
+        except ValueError as e:
+            messagebox.showerror("Error", f"An error occurred: {e}")
 
 def main():
     root = tk.Tk()

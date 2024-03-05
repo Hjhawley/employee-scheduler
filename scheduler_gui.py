@@ -12,41 +12,33 @@ class MentorSchedulerGUI:
         self.root = root
         self.root.title('Mentor Scheduler')
         
-        # Mentor Management Section
         tk.Button(self.root, text="Edit Mentor Info", command=self.edit_mentor_info).grid(row=0, columnspan=2)
         
-        # Schedule Name
         tk.Label(self.root, text="Schedule Name:").grid(row=1, column=0, sticky='e')
         self.schedule_name_entry = tk.Entry(self.root, width=entry_width)
         self.schedule_name_entry.grid(row=1, column=1)
         
-        # Year
         tk.Label(self.root, text="Year:").grid(row=2, column=0, sticky='e')
         self.year_entry = tk.Entry(self.root, width=entry_width)
         self.year_entry.grid(row=2, column=1)
         
-        # Month Dropdown Menu
         tk.Label(self.root, text="Month:").grid(row=3, column=0, sticky='e')
         self.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         self.month_var = tk.StringVar()
         self.month_dropdown = ttk.Combobox(self.root, textvariable=self.month_var, values=self.months, state="readonly", width=entry_width - 4)  # ttk.Combobox has different padding, hence the -4
         self.month_dropdown.grid(row=3, column=1)
         
-        # Generate Button
         tk.Button(self.root, text="Generate Schedule", command=self.generate_schedule).grid(row=4, columnspan=2)
 
     def edit_mentor_info(self):
-        # Open the JSON file and read the mentor information
         with open('mentor_info.json', 'r') as file:
             self.mentor_data = json.load(file)
         
         self.mentor_names = ["New Mentor"] + list(self.mentor_data['mentor_info'].keys())
         
-        # Create a new window for editing mentor information
         self.edit_window = tk.Toplevel(self.root, width=entry_width)
         self.edit_window.title("Edit Mentor Information")
 
-        # Dropdown menu to select an existing mentor to edit
         tk.Label(self.edit_window, text="Select Mentor:").grid(row=0, column=0, sticky='e')
         self.selected_mentor_var = tk.StringVar(self.edit_window)
         self.selected_mentor_var.set(self.mentor_names[0])  # Set to 'New Mentor'
@@ -54,7 +46,7 @@ class MentorSchedulerGUI:
         self.mentor_dropdown.grid(row=0, column=1)
         self.mentor_dropdown.bind('<<ComboboxSelected>>', self.load_mentor_info)
 
-        # Entry fields for mentor information
+        # Entry fields
         self.name_entry = self.create_label_entry("Name:", 1)
         self.hours_wanted_entry = self.create_label_entry("Hours wanted per week:", 2)
         self.hard_dates_entry = self.create_label_entry("Dates unavailable:", 3)
@@ -66,7 +58,6 @@ class MentorSchedulerGUI:
             tk.Checkbutton(self.edit_window, text=day, variable=self.weekdays_checkboxes[day]).grid(row=row, column=0, sticky='w')
             row += 1
         
-        # Save button to save edited information or add a new mentor
         self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info)
         self.save_button.grid(row=row + 1, columnspan=2)
 
@@ -77,7 +68,6 @@ class MentorSchedulerGUI:
         return entry
 
     def load_mentor_info(self, event):
-        # Load the selected mentor's information into the entry fields for editing
         selected_mentor_name = self.selected_mentor_var.get()
         if selected_mentor_name == "New Mentor":
             self.name_entry.delete(0, tk.END)
@@ -97,20 +87,36 @@ class MentorSchedulerGUI:
                 self.weekdays_checkboxes[day].set(day in mentor_info.get('weekdays', []))
 
     def save_mentor_info(self):
-        # Logic to save the edited information back to the JSON file
         name = self.name_entry.get()
         weekdays = [day for day, var in self.weekdays_checkboxes.items() if var.get()]
-        hard_dates = [int(date.strip()) for date in self.hard_dates_entry.get().split(',') if date.strip()]
-        hours_wanted = int(self.hours_wanted_entry.get()) if self.hours_wanted_entry.get().strip() else 0
+
+        hard_date_entries = self.hard_dates_entry.get().split(',') if self.hard_dates_entry.get().strip() else []
+        hard_dates = []
+        for date_str in hard_date_entries:
+            try:
+                date = int(date_str.strip())
+                hard_dates.append(date)
+            except ValueError:
+                messagebox.showerror("Error", f"Invalid date entry: '{date_str}'. Enter numbers for unavailable dates, separated by commas (no spaces.)")
+                return
+
+        hours_wanted = self.hours_wanted_entry.get().strip()
+        if hours_wanted:
+            try:
+                hours_wanted = int(hours_wanted)
+            except ValueError:
+                messagebox.showerror("Error", f"Invalid entry for hours wanted: '{hours_wanted}'. Please enter a number.")
+                return
+        else:
+            hours_wanted = 0
 
         if not name:
             messagebox.showerror("Error", "The name field cannot be empty.")
             return
 
-        # By default, set weekday_behavior to 'Re' if it is not already present
+        # By default, set weekday_behavior to 'Re'
         weekday_behavior = self.mentor_data['mentor_info'].get(name, {}).get('weekday_behavior', ['Re'])
 
-        # Replace or add the mentor information
         self.mentor_data['mentor_info'][name] = {
             "weekdays": weekdays,
             "weekday_behavior": weekday_behavior,
@@ -119,7 +125,6 @@ class MentorSchedulerGUI:
             "soft_dates": []
         }
 
-        # Save the updated mentor data back to the JSON file
         with open('mentor_info.json', 'w') as file:
             json.dump(self.mentor_data, file, indent=4)
 
@@ -129,10 +134,9 @@ class MentorSchedulerGUI:
     def generate_schedule(self):
         schedule_name = self.schedule_name_entry.get()
         year = self.year_entry.get()
-        month = str(self.months.index(self.month_var.get()) + 1)  # Convert month name to month number
+        month = str(self.months.index(self.month_var.get()) + 1)
         pay_period_length = '15'  # Hardcoded to always be 15
         
-        # Call spread_gen.py with subprocess
         try:
             subprocess.run(['python', SPREAD_GEN_SCRIPT, schedule_name, year, month, pay_period_length], check=True)
             messagebox.showinfo("Success", "Schedule generated successfully.")

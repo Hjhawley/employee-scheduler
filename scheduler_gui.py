@@ -87,6 +87,10 @@ class MentorSchedulerGUI:
         self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info, width=20)
         self.save_button.grid(row=row + 1, columnspan=2)
 
+        self.delete_button = tk.Button(self.edit_window, text="Delete Mentor", command=self.delete_mentor_info, width=20)
+        self.delete_button.grid(row=row + 2, columnspan=2)
+
+
     def create_label_entry(self, label_text, row):
         tk.Label(self.edit_window, text=label_text).grid(row=row, column=0, sticky='e')
         entry = tk.Entry(self.edit_window)
@@ -162,6 +166,20 @@ class MentorSchedulerGUI:
 
         messagebox.showinfo("Success", "Mentor information saved successfully.")
         self.edit_window.destroy()
+
+    def delete_mentor_info(self):
+        selected_mentor_name = self.selected_mentor_var.get()
+        if selected_mentor_name == "New Mentor":
+            messagebox.showerror("Error", "No mentor selected to delete.")
+            return
+
+        if messagebox.askyesno("Confirm Delete", f"Are you sure you want to delete {selected_mentor_name}? This cannot be undone."):
+            del self.mentor_data['mentor_info'][selected_mentor_name]  # Remove the mentor from the dictionary
+            with open('mentor_info.json', 'w') as file:
+                json.dump(self.mentor_data, file, indent=4)  # Save the updated data back to the file
+            messagebox.showinfo("Success", f"{selected_mentor_name} has been deleted successfully.")
+            self.edit_window.destroy()  # Optionally close the edit window or refresh the mentor list
+            self.edit_mentor_info()  # Re-open or refresh the edit window if needed
 
     def generate_schedule(self):
         schedule_name = self.schedule_name_entry.get().strip()

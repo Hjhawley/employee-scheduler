@@ -85,9 +85,7 @@
     },
     "mentor_info": {
         "Avree": {
-            "weekdays": [
-                "Tuesday"
-            ],
+            "weekdays": [],
             "weekday_behavior": [
                 "Re"
             ],
@@ -95,7 +93,10 @@
                 7,
                 8,
                 16,
-                22
+                22,
+                28,
+                29,
+                30
             ],
             "hours_wanted": 40,
             "soft_dates": []
@@ -105,8 +106,12 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
-            "hours_wanted": 25,
+            "hard_dates": [
+                1,
+                2,
+                3
+            ],
+            "hours_wanted": 29,
             "soft_dates": []
         },
         "Ella": {
@@ -168,8 +173,7 @@
         },
         "Mitch": {
             "weekdays": [
-                "Tuesday",
-                "Wednesday"
+                "Sunday"
             ],
             "weekday_behavior": [
                 "Re"
@@ -177,16 +181,14 @@
             "hard_dates": [
                 1,
                 2,
-                3
+                3,
+                4
             ],
             "hours_wanted": 30,
             "soft_dates": []
         },
         "Roxy": {
-            "weekdays": [
-                "Tuesday",
-                "Thursday"
-            ],
+            "weekdays": [],
             "weekday_behavior": [
                 "Re"
             ],
@@ -218,6 +220,8 @@
             "holiday_a_shift": 9,
             "holiday_b_shift": 9
         },
-        "dates": []
+        "dates": [
+            19
+        ]
     }
 }

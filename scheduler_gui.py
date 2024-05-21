@@ -126,8 +126,10 @@ class MentorSchedulerGUI:
         if hours_wanted is None:
             return
 
-        hard_dates = self.get_validated_dates()
-        if hard_dates is None:
+        try:
+            hard_dates = self.get_validated_dates(self.hard_dates_entry.get().strip())
+        except ValueError as e:
+            messagebox.showerror("Error", str(e))
             return
 
         weekdays = [day for day, var in self.weekdays_checkboxes.items() if var.get()]
@@ -143,7 +145,12 @@ class MentorSchedulerGUI:
             "soft_dates": []
         }
 
-        self.save_holidays()
+        try:
+            holiday_dates = self.get_validated_dates(self.holiday_entry.get().strip())
+            self.mentor_data['holidays']['dates'] = holiday_dates
+        except ValueError as e:
+            messagebox.showerror("Error", str(e))
+            return
 
         with open('mentor_info.json', 'w') as file:
             json.dump(self.mentor_data, file, indent=4)
@@ -161,34 +168,31 @@ class MentorSchedulerGUI:
                 return None
         return 0
 
-    def get_validated_dates(self):
-        hard_dates_str = self.hard_dates_entry.get().strip()
+    def get_validated_dates(self, dates_str):
         try:
-            hard_dates = self.parse_dates(hard_dates_str)
-            return hard_dates
+            return self.parse_dates(dates_str)
         except ValueError as e:
-            messagebox.showerror("Error", str(e))
-            return None
+            raise
 
     def parse_dates(self, dates_str):
         dates = set()
         for part in dates_str.split(','):
             part = part.strip()
+            if not part:  # Skip empty parts
+                continue
             if '-' in part:
-                start, end = part.split('-')
                 try:
-                    start = int(start)
-                    end = int(end)
+                    start, end = map(int, part.split('-'))
                     if start > end:
-                        raise ValueError(f"Invalid range: {part}")
+                        raise ValueError
                     dates.update(range(start, end + 1))
                 except ValueError:
-                    raise ValueError(f"Invalid date range: {part}")
+                    raise ValueError(f"Invalid date range: '{part}'")
             else:
                 try:
                     dates.add(int(part))
                 except ValueError:
-                    raise ValueError(f"Invalid date: {part}")
+                    raise ValueError(f"Invalid date: '{part}'")
         return sorted(dates)
 
     def save_holidays(self):

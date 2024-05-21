@@ -1,0 +1,32 @@
+Date,A shift,B shift,C shift,,Mentor,Hours (1st pay period),Hours (2nd pay period),Hours wanted per pay period,Days off
+1 Monday,Ella,Sam,Bella,,Avree,47,57.0,64,"[4, 5, 6, 7, 8, 14, 21, 28]"
+2 Tuesday,Ella,Avree,Sam,,Bella,52,54.0,64,[]
+3 Wednesday,Roxy,Avree,,,Ella,15,0,64,"[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]"
+4 Thursday,Sam,Levi,,,Levi,48,53,64,"[6, 13, 20, 27]"
+5 Friday,Mitch,Levi,Bella,,Mitch,39.0,46,56,"[1, 2, 3, 4, 7, 14, 21, 28]"
+6 Saturday,Roxy,Mitch,Bella,,Roxy,50,51,64,"[2, 4, 5, 7, 9, 11, 14, 16, 18, 19, 20, 21, 23, 25, 28, 30]"
+7 Sunday,Sam,Bella,,,Sam,44,49,56,"[5, 6, 12, 13, 19, 20, 26, 27]"
+8 Monday,Mitch,Roxy,Sam
+9 Tuesday,Avree,Levi,Bella
+10 Wednesday,Avree,Levi
+11 Thursday,Bella,Levi,Mitch
+12 Friday,Roxy,Avree,Mitch
+13 Saturday,Roxy,Avree,Mitch
+14 Sunday,Levi,Bella
+15 Monday,Bella,Sam,Roxy
+16 Tuesday,Bella,Levi,Avree
+17 Wednesday,Roxy,Mitch
+18 Thursday,Mitch,Sam,Avree
+19 Friday,Mitch,Bella,Levi
+20 Saturday,Avree,Bella,Mitch
+21 Sunday,Sam,Levi
+22 Monday,Roxy,Sam,Avree
+23 Tuesday,Bella,Levi,Avree
+24 Wednesday,Roxy,Bella
+25 Thursday,Mitch,Sam,Bella
+26 Friday,Roxy,Mitch,Avree
+27 Saturday,Roxy,Avree,Bella
+28 Sunday,Sam,Levi
+29 Monday,Roxy,Levi,Mitch
+30 Tuesday,Avree,Levi,Bella
+31 Wednesday,Avree,Sam

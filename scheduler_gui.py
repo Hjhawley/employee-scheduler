@@ -117,34 +117,22 @@ class MentorSchedulerGUI:
                 self.weekdays_checkboxes[day].set(day in mentor_info.get('weekdays', []))
 
     def save_mentor_info(self):
-        name = self.name_entry.get()
-        weekdays = [day for day, var in self.weekdays_checkboxes.items() if var.get()]
-
-        hard_date_entries = self.hard_dates_entry.get().split(',') if self.hard_dates_entry.get().strip() else []
-        hard_dates = []
-        for date_str in hard_date_entries:
-            try:
-                date = int(date_str.strip())
-                hard_dates.append(date)
-            except ValueError:
-                messagebox.showerror("Error", f"Invalid date entry: '{date_str}'. Enter numbers for unavailable dates, separated by commas (no spaces.)")
-                return
-
-        hours_wanted = self.hours_wanted_entry.get().strip()
-        if hours_wanted:
-            try:
-                hours_wanted = int(hours_wanted)
-            except ValueError:
-                messagebox.showerror("Error", f"Invalid entry for hours wanted: '{hours_wanted}'. Please enter a number.")
-                return
-        else:
-            hours_wanted = 0
-
+        name = self.name_entry.get().strip()
         if not name:
             messagebox.showerror("Error", "The name field cannot be empty.")
             return
 
-        # By default, set weekday_behavior to 'Re'
+        hours_wanted = self.get_validated_hours()
+        if hours_wanted is None:
+            return
+
+        hard_dates = self.get_validated_dates()
+        if hard_dates is None:
+            return
+
+        weekdays = [day for day, var in self.weekdays_checkboxes.items() if var.get()]
+
+        # Set weekday_behavior to 'Re' by default
         weekday_behavior = self.mentor_data['mentor_info'].get(name, {}).get('weekday_behavior', ['Re'])
 
         self.mentor_data['mentor_info'][name] = {
@@ -155,17 +143,61 @@ class MentorSchedulerGUI:
             "soft_dates": []
         }
 
-        holiday_dates_str = self.holiday_entry.get().strip()
-        if holiday_dates_str:
-            holiday_dates = [int(date.strip()) for date in holiday_dates_str.split(',') if date.strip().isdigit()]
-        else:
-            holiday_dates = []
-        self.mentor_data['holidays']['dates'] = holiday_dates
+        self.save_holidays()
+
         with open('mentor_info.json', 'w') as file:
             json.dump(self.mentor_data, file, indent=4)
 
         messagebox.showinfo("Success", "Mentor information saved successfully.")
         self.edit_window.destroy()
+
+    def get_validated_hours(self):
+        hours_wanted = self.hours_wanted_entry.get().strip()
+        if hours_wanted:
+            try:
+                return int(hours_wanted)
+            except ValueError:
+                messagebox.showerror("Error", f"Invalid entry for hours wanted: '{hours_wanted}'. Please enter a number.")
+                return None
+        return 0
+
+    def get_validated_dates(self):
+        hard_dates_str = self.hard_dates_entry.get().strip()
+        try:
+            hard_dates = self.parse_dates(hard_dates_str)
+            return hard_dates
+        except ValueError as e:
+            messagebox.showerror("Error", str(e))
+            return None
+
+    def parse_dates(self, dates_str):
+        dates = set()
+        for part in dates_str.split(','):
+            part = part.strip()
+            if '-' in part:
+                start, end = part.split('-')
+                try:
+                    start = int(start)
+                    end = int(end)
+                    if start > end:
+                        raise ValueError(f"Invalid range: {part}")
+                    dates.update(range(start, end + 1))
+                except ValueError:
+                    raise ValueError(f"Invalid date range: {part}")
+            else:
+                try:
+                    dates.add(int(part))
+                except ValueError:
+                    raise ValueError(f"Invalid date: {part}")
+        return sorted(dates)
+
+    def save_holidays(self):
+        holiday_dates_str = self.holiday_entry.get().strip()
+        try:
+            holiday_dates = self.parse_dates(holiday_dates_str)
+            self.mentor_data['holidays']['dates'] = holiday_dates
+        except ValueError as e:
+            messagebox.showerror("Error", str(e))
 
     def delete_mentor_info(self):
         selected_mentor_name = self.selected_mentor_var.get()

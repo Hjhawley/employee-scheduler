@@ -130,8 +130,7 @@
         },
         "Levi": {
             "weekdays": [
-                "Thursday",
-                "Saturday"
+                "Thursday"
             ],
             "weekday_behavior": [
                 "Re"
@@ -158,6 +157,13 @@
                 "Re"
             ],
             "hard_dates": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
                 10,
                 11,
                 12,
@@ -180,6 +186,17 @@
             ],
             "hard_dates": [],
             "hours_wanted": 40,
+            "soft_dates": []
+        },
+        "NEW_MENTOR": {
+            "weekdays": [
+                "Sunday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [],
+            "hours_wanted": 20,
             "soft_dates": []
         }
     },

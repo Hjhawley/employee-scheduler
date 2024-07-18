@@ -1,64 +1,64 @@
 Date,A shift,B shift,C shift,,Mentor,Hours (1st pay period),Hours (2nd pay period),Hours wanted per pay period,Days off
 
-1 Thursday,Sam,Bella,NEW_MENTOR,,Avree,25,57,80,"[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
+1 Thursday,Bella,Sam,Xironel,,Avree,25,53,60,"[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
 
-2 Friday,Levi,Sam,Bella,,Bella,73,50,80,"[12, 13, 14, 16, 19, 20, 21, 22, 23, 24, 28, 29, 31]"
+2 Friday,Levi,Sam,Bella,,Bella,56,41,60,"[12, 13, 14, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 31]"
 
-3 Saturday,Levi,Sam,NEW_MENTOR,,Levi,55,59,80,"[1, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 22, 29]"
+3 Saturday,Levi,Bella,Xironel,,Levi,47,50,60,"[1, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 22, 29]"
 
-4 Sunday,Levi,Bella,,,Mitch,14,56,80,"[1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 25]"
+4 Sunday,Levi,Sam,,,Mitch,14,31,40,"[1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 25]"
 
-5 Monday,Levi,Sam,Bella,,Sam,71,56,80,"[3, 10, 17, 24, 31]"
+5 Monday,Levi,Xironel,Bella,,Sam,59,55,60,"[3, 10, 17, 24, 31]"
 
-6 Tuesday,Levi,Sam,Bella,,NEW_MENTOR,28,22,40,"[4, 11, 18, 25]"
+6 Tuesday,Levi,Bella,Sam,,Xironel,47,42,50,"[2, 9, 23, 24, 31]"
 
-7 Wednesday,Levi,Bella
+7 Wednesday,Levi,Xironel,,,Brooke,18,28,40,"[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 18, 25]"
 
-8 Thursday,Mitch,Sam,Bella
+8 Thursday,Mitch,Xironel,Sam
 
-9 Friday,Mitch,Levi,Sam
+9 Friday,Mitch,Sam,Bella
 
-10 Saturday,Bella,NEW_MENTOR,Sam
+10 Saturday,Bella,Xironel,Sam
 
-11 Sunday,Bella,Sam
+11 Sunday,Sam,Bella
 
-12 Monday,Avree,Sam,NEW_MENTOR
+12 Monday,Avree,Sam,Xironel
 
-13 Tuesday,Avree,Sam,NEW_MENTOR
+13 Tuesday,Avree,Brooke,Xironel
 
-14 Wednesday,Avree,Sam
+14 Wednesday,Avree,Brooke
 
-15 Thursday,Avree,Sam,Bella
+15 Thursday,Avree,Brooke,Sam
 
-16 Friday,Sam,Avree,NEW_MENTOR
+16 Friday,Xironel,Sam,Avree
 
-17 Saturday,Bella,Avree,NEW_MENTOR
+17 Saturday,Bella,Xironel,Avree
 
 18 Sunday,Bella,Sam
 
-19 Monday,Sam,Levi,Mitch
+19 Monday,Avree,Sam,Mitch
 
-20 Tuesday,Avree,Sam,Levi
+20 Tuesday,Brooke,Xironel,Levi
 
-21 Wednesday,Mitch,Avree
+21 Wednesday,Avree,Mitch
 
-22 Thursday,Sam,Mitch,Avree
+22 Thursday,Mitch,Brooke,Xironel
 
-23 Friday,Levi,Sam,Mitch
+23 Friday,Sam,Levi,Avree
 
-24 Saturday,Levi,Mitch,Avree
+24 Saturday,Levi,Avree,Mitch
 
-25 Sunday,Bella,Levi
+25 Sunday,Levi,Sam
 
-26 Monday,Bella,Mitch,Levi
+26 Monday,Bella,Levi,Xironel
 
-27 Tuesday,Bella,Sam,Avree
+27 Tuesday,Bella,Avree,Mitch
 
-28 Wednesday,Avree,NEW_MENTOR
+28 Wednesday,Sam,Brooke
 
-29 Thursday,Sam,Mitch,Avree
+29 Thursday,Mitch,Brooke,Xironel
 
-30 Friday,Bella,NEW_MENTOR,Levi
+30 Friday,Bella,Sam,Xironel
 
-31 Saturday,Levi,Mitch,Avree
+31 Saturday,Levi,Avree,Brooke
 

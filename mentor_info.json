@@ -112,8 +112,8 @@
             ],
             "hard_dates": [
                 12,
-                13,
                 14,
+                15,
                 16,
                 19,
                 20,
@@ -153,7 +153,7 @@
         },
         "Mitch": {
             "weekdays": [
-                "Sunday"
+                "Wednesday"
             ],
             "weekday_behavior": [
                 "Re"
@@ -176,22 +176,34 @@
                 17,
                 18
             ],
-            "hours_wanted": 20,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Sam": {
             "weekdays": [
+                "Thursday",
                 "Saturday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                12,
+                13,
+                14,
+                19,
+                24
+            ],
             "hours_wanted": 30,
             "soft_dates": []
         },
         "Xironel": {
-            "weekdays": [],
+            "weekdays": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday"
+            ],
             "weekday_behavior": [
                 "Re"
             ],
@@ -202,7 +214,7 @@
                 24,
                 31
             ],
-            "hours_wanted": 25,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Brooke": {
@@ -226,7 +238,7 @@
                 11,
                 12
             ],
-            "hours_wanted": 20,
+            "hours_wanted": 30,
             "soft_dates": []
         }
     },

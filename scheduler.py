@@ -33,9 +33,8 @@ class Mentor():
 	def __init__(self, name: str, hours_wanted: int, hard_dates: List[int], soft_dates: List[int], len_pay: int):
 		self.name = name
 		self.hours_wanted =  hours_wanted
-		self.hard_dates = hard_dates
-		self.soft_dates = soft_dates
-
+		self.hard_dates = [int(date) for date in hard_dates]
+		self.soft_dates = [int(date) for date in soft_dates]
 		self.hours_pay = 0
 		self.days_left = len_pay - len(hard_dates)
 	

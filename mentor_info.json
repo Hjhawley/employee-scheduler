@@ -184,6 +184,8 @@
             "holiday_a_shift": 9,
             "holiday_b_shift": 9
         },
-        "dates": []
+        "dates": [
+            1
+        ]
     }
 }

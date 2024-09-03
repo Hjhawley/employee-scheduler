@@ -85,36 +85,17 @@
     },
     "mentor_info": {
         "Avree": {
-            "weekdays": [],
+            "weekdays": [
+                "Sunday"
+            ],
             "weekday_behavior": [
                 "Re"
             ],
             "hard_dates": [
-                1,
-                2,
                 3,
-                4,
-                5,
                 6,
-                7,
-                8,
-                9,
-                10,
-                11
-            ],
-            "hours_wanted": 30,
-            "soft_dates": []
-        },
-        "Bella": {
-            "weekdays": [],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [
-                12,
-                14,
-                15,
-                16,
+                17,
+                18,
                 19,
                 20,
                 21,
@@ -122,61 +103,52 @@
                 23,
                 24,
                 25,
-                28,
-                29,
+                30,
                 31
             ],
             "hours_wanted": 30,
             "soft_dates": []
         },
-        "Levi": {
+        "Bella": {
             "weekdays": [
+                "Tuesday",
                 "Thursday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                18
+            "hard_dates": [],
+            "hours_wanted": 30,
+            "soft_dates": []
+        },
+        "Levi": {
+            "weekdays": [],
+            "weekday_behavior": [
+                "Re"
             ],
+            "hard_dates": [],
             "hours_wanted": 30,
             "soft_dates": []
         },
         "Mitch": {
             "weekdays": [
+                "Sunday",
+                "Tuesday",
                 "Wednesday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
             "hard_dates": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
                 10,
                 11,
                 12,
                 13,
                 14,
-                15,
-                16,
-                17,
-                18
+                19,
+                31
             ],
-            "hours_wanted": 30,
+            "hours_wanted": 20,
             "soft_dates": []
         },
         "Sam": {
@@ -187,37 +159,11 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                12,
-                13,
-                14,
-                19,
-                24
-            ],
+            "hard_dates": [],
             "hours_wanted": 30,
             "soft_dates": []
         },
         "Xironel": {
-            "weekdays": [
-                "Sunday",
-                "Monday",
-                "Tuesday",
-                "Wednesday"
-            ],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [
-                2,
-                9,
-                23,
-                24,
-                31
-            ],
-            "hours_wanted": 30,
-            "soft_dates": []
-        },
-        "Brooke": {
             "weekdays": [
                 "Sunday"
             ],
@@ -225,20 +171,11 @@
                 "Re"
             ],
             "hard_dates": [
-                1,
-                2,
-                3,
                 4,
                 5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12
+                6
             ],
-            "hours_wanted": 30,
+            "hours_wanted": 40,
             "soft_dates": []
         }
     },

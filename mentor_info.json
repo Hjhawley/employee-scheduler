@@ -177,6 +177,19 @@
             ],
             "hours_wanted": 40,
             "soft_dates": []
+        },
+        "Elle": {
+            "weekdays": [
+                "Monday",
+                "Tuesday",
+                "Wednesday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [],
+            "hours_wanted": 20,
+            "soft_dates": []
         }
     },
     "holidays": {
@@ -184,8 +197,6 @@
             "holiday_a_shift": 9,
             "holiday_b_shift": 9
         },
-        "dates": [
-            1
-        ]
+        "dates": []
     }
 }

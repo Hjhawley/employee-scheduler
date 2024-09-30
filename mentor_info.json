@@ -91,21 +91,7 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                3,
-                6,
-                17,
-                18,
-                19,
-                20,
-                21,
-                22,
-                23,
-                24,
-                25,
-                30,
-                31
-            ],
+            "hard_dates": [],
             "hours_wanted": 30,
             "soft_dates": []
         },
@@ -121,18 +107,25 @@
             "hours_wanted": 30,
             "soft_dates": []
         },
+        "Elle": {
+            "weekdays": [
+                "Monday",
+                "Tuesday",
+                "Wednesday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [],
+            "hours_wanted": 20,
+            "soft_dates": []
+        },
         "Levi": {
             "weekdays": [],
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                11,
-                12,
-                29,
-                30,
-                31
-            ],
+            "hard_dates": [],
             "hours_wanted": 30,
             "soft_dates": []
         },
@@ -145,15 +138,7 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                10,
-                11,
-                12,
-                13,
-                14,
-                19,
-                31
-            ],
+            "hard_dates": [],
             "hours_wanted": 20,
             "soft_dates": []
         },
@@ -177,24 +162,14 @@
                 "Re"
             ],
             "hard_dates": [
-                4,
-                5,
-                6
+                1,
+                2,
+                27,
+                28,
+                29,
+                30
             ],
-            "hours_wanted": 40,
-            "soft_dates": []
-        },
-        "Elle": {
-            "weekdays": [
-                "Monday",
-                "Tuesday",
-                "Wednesday"
-            ],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [],
-            "hours_wanted": 20,
+            "hours_wanted": 35,
             "soft_dates": []
         }
     },
@@ -203,6 +178,9 @@
             "holiday_a_shift": 9,
             "holiday_b_shift": 9
         },
-        "dates": []
+        "dates": [
+            28,
+            29
+        ]
     }
 }

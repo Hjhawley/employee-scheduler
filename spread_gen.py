@@ -23,7 +23,7 @@ def write_to_csv(schedule: Schedule, file_name: str):
 
     with open(file_name, 'w') as output:
         writer = csv.writer(output)
-        row = ['Date', 'A shift', 'B shift', 'C shift', '', 'Mentor', 'Hours (1st pay period)', 'Hours (2nd pay period)', 'Hours wanted per pay period', 'Days off']
+        row = ['Date', 'A shift', 'B shift', 'C shift', '', 'Mentor', 'Hours (1st pay period)', 'Hours (2nd pay period)', 'Hours wanted', 'Days off']
         writer.writerow(row)
         for idx, day in enumerate(schedule.assigned_days):
             weekday = week_day_mapper(day)

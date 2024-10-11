@@ -91,7 +91,17 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                2,
+                3,
+                9,
+                13,
+                16,
+                27,
+                28,
+                29,
+                30
+            ],
             "hours_wanted": 30,
             "soft_dates": []
         },
@@ -116,16 +126,34 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                1,
+                2,
+                3
+            ],
             "hours_wanted": 20,
             "soft_dates": []
         },
         "Levi": {
-            "weekdays": [],
+            "weekdays": [
+                "Monday",
+                "Wednesday",
+                "Friday",
+                "Saturday"
+            ],
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                14,
+                15,
+                16,
+                17,
+                27,
+                28,
+                29,
+                30
+            ],
             "hours_wanted": 30,
             "soft_dates": []
         },
@@ -138,7 +166,15 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                1,
+                2,
+                3,
+                9,
+                16,
+                23,
+                29
+            ],
             "hours_wanted": 20,
             "soft_dates": []
         },
@@ -150,7 +186,12 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                8,
+                12,
+                25,
+                28
+            ],
             "hours_wanted": 30,
             "soft_dates": []
         },
@@ -164,6 +205,9 @@
             "hard_dates": [
                 1,
                 2,
+                8,
+                9,
+                10,
                 27,
                 28,
                 29,

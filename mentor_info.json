@@ -84,27 +84,16 @@
         }
     },
     "mentor_info": {
-        "Avree": {
+        "Michael": {
             "weekdays": [
-                "Sunday",
-                "Monday"
+                "Tuesday",
+                "Thursday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                1,
-                6,
-                13,
-                14,
-                15,
-                16,
-                17,
-                20,
-                22,
-                27
-            ],
-            "hours_wanted": 37,
+            "hard_dates": [],
+            "hours_wanted": 40,
             "soft_dates": []
         },
         "Bella": {
@@ -125,6 +114,57 @@
                 26
             ],
             "hours_wanted": 40,
+            "soft_dates": []
+        },
+        "Sam": {
+            "weekdays": [
+                "Tuesday",
+                "Saturday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [
+                1,
+                8,
+                15,
+                22
+            ],
+            "hours_wanted": 40,
+            "soft_dates": []
+        },
+        "Avree": {
+            "weekdays": [
+                "Sunday",
+                "Monday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [
+                1,
+                6,
+                13,
+                14,
+                15,
+                16,
+                17,
+                20,
+                22,
+                27
+            ],
+            "hours_wanted": 39,
+            "soft_dates": []
+        },
+        "Brooke": {
+            "weekdays": [
+                "Wednesday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [],
+            "hours_wanted": 32,
             "soft_dates": []
         },
         "Elle": {
@@ -152,18 +192,6 @@
             "hours_wanted": 37,
             "soft_dates": []
         },
-        "Michael": {
-            "weekdays": [
-                "Tuesday",
-                "Thursday"
-            ],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [],
-            "hours_wanted": 40,
-            "soft_dates": []
-        },
         "Mitch": {
             "weekdays": [],
             "weekday_behavior": [
@@ -177,35 +205,7 @@
                 27,
                 28
             ],
-            "hours_wanted": 30,
-            "soft_dates": []
-        },
-        "Sam": {
-            "weekdays": [
-                "Tuesday",
-                "Saturday"
-            ],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [
-                1,
-                8,
-                15,
-                22
-            ],
-            "hours_wanted": 40,
-            "soft_dates": []
-        },
-        "Brooke": {
-            "weekdays": [
-                "Sunday"
-            ],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [],
-            "hours_wanted": 32,
+            "hours_wanted": 37,
             "soft_dates": []
         }
     },

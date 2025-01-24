@@ -119,6 +119,7 @@
         "Sam": {
             "weekdays": [
                 "Tuesday",
+                "Friday",
                 "Saturday"
             ],
             "weekday_behavior": [

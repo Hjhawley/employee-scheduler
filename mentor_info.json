@@ -92,7 +92,23 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [],
+            "hard_dates": [
+                4,
+                6,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                18,
+                20,
+                25,
+                27
+            ],
             "hours_wanted": 40,
             "soft_dates": []
         },
@@ -106,30 +122,28 @@
             "weekday_behavior": [
                 "Re"
             ],
-            "hard_dates": [
-                5,
-                12,
-                13,
-                17,
-                26
-            ],
+            "hard_dates": [],
             "hours_wanted": 40,
             "soft_dates": []
         },
         "Sam": {
             "weekdays": [
                 "Tuesday",
-                "Friday",
                 "Saturday"
             ],
             "weekday_behavior": [
                 "Re"
             ],
             "hard_dates": [
-                1,
-                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
                 15,
-                22
+                16,
+                17
             ],
             "hours_wanted": 40,
             "soft_dates": []
@@ -144,15 +158,17 @@
             ],
             "hard_dates": [
                 1,
+                4,
                 6,
-                13,
+                7,
+                8,
+                12,
                 14,
                 15,
                 16,
-                17,
-                20,
-                22,
-                27
+                28,
+                29,
+                30
             ],
             "hours_wanted": 39,
             "soft_dates": []
@@ -165,7 +181,7 @@
                 "Re"
             ],
             "hard_dates": [],
-            "hours_wanted": 32,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Elle": {
@@ -179,18 +195,13 @@
                 "Re"
             ],
             "hard_dates": [
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                14,
-                15,
-                16
+                9,
+                10,
+                11,
+                12,
+                13
             ],
-            "hours_wanted": 37,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Mitch": {
@@ -199,14 +210,45 @@
                 "Re"
             ],
             "hard_dates": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
                 13,
-                24,
-                25,
-                26,
-                27,
-                28
+                14,
+                15,
+                16,
+                17,
+                18
             ],
-            "hours_wanted": 37,
+            "hours_wanted": 39,
+            "soft_dates": []
+        },
+        "Emma": {
+            "weekdays": [
+                "Thursday",
+                "Friday"
+            ],
+            "weekday_behavior": [
+                "Re"
+            ],
+            "hard_dates": [
+                8,
+                10,
+                11,
+                12,
+                13,
+                14
+            ],
+            "hours_wanted": 35,
             "soft_dates": []
         }
     },

@@ -143,14 +143,15 @@
                 14,
                 15,
                 16,
-                17
+                17,
+                20,
+                26
             ],
             "hours_wanted": 30,
             "soft_dates": []
         },
         "Avree": {
             "weekdays": [
-                "Sunday",
                 "Monday"
             ],
             "weekday_behavior": [

@@ -109,7 +109,7 @@
                 25,
                 27
             ],
-            "hours_wanted": 40,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Bella": {
@@ -123,7 +123,7 @@
                 "Re"
             ],
             "hard_dates": [],
-            "hours_wanted": 40,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Sam": {
@@ -145,7 +145,7 @@
                 16,
                 17
             ],
-            "hours_wanted": 40,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Avree": {
@@ -170,7 +170,7 @@
                 29,
                 30
             ],
-            "hours_wanted": 39,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Brooke": {
@@ -229,7 +229,7 @@
                 17,
                 18
             ],
-            "hours_wanted": 39,
+            "hours_wanted": 30,
             "soft_dates": []
         },
         "Emma": {
@@ -248,7 +248,7 @@
                 13,
                 14
             ],
-            "hours_wanted": 35,
+            "hours_wanted": 30,
             "soft_dates": []
         }
     },

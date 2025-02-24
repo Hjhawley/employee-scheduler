@@ -23,7 +23,7 @@ def write_to_csv(schedule: Schedule, file_name: str):
 
     with open(file_name, 'w') as output:
         writer = csv.writer(output)
-        row = ['Date', 'A shift', 'B shift', 'C shift', '', 'Mentor', 'Hours (1st pay period)', 'Hours (2nd pay period)', 'Hours wanted', 'Days off']
+        row = ['Date', 'A shift', 'B shift', 'C shift', '', 'Mentor', '1st pay p. hrs', '2nd pay p. hrs', 'Hrs wanted', 'Days off']
         writer.writerow(row)
         for idx, day in enumerate(schedule.assigned_days):
             weekday = week_day_mapper(day)
@@ -44,14 +44,12 @@ def write_to_csv(schedule: Schedule, file_name: str):
                 row[9] = schedule.m1[idx].hard_dates + schedule.m2[idx].hard_dates
             writer.writerow(row)
 
-
-
 def valid_input(idx: int, inp: str) -> bool:
     """checks if passed input is a legal value for the given index."""
     if idx == 0 or idx == 1:
         try:
             int(inp)
-            print("got bad filename no action was taken")
+            print("Got bad filename, no action was taken")
             return False
         except ValueError:
             return True
@@ -62,30 +60,30 @@ def valid_input(idx: int, inp: str) -> bool:
             assert int(inp) > 2000 and int(inp) < 3000
             return True
         except:
-            print("got bad year value: {0}, no action was taken".format(inp))
+            print("Got bad year value: {0}, no action was taken".format(inp))
             return False
     elif idx == 3:
         try: 
             assert int(inp) >= 1 and int(inp) <= 12
             return True
         except:
-            print("got bad month value: {0}, no action was taken".format(inp))
+            print("Got bad month value: {0}, no action was taken".format(inp))
             return False
     elif idx == 4:
         try: 
             assert int(inp) >= 1 and int(inp) <= 31
             return True
         except:
-            print("got bad pay period length: {0}, no action was taken".format(inp))
+            print("Got bad pay period length: {0}, no action was taken".format(inp))
             return False
     else:
-        print('must have exactly four input arguments')
+        print('Must have exactly four input arguments.')
         return False 
 
 if __name__ == "__main__":
     valid_in = True
     if len(sys.argv) != 5: #Not a typo, we ignored the call to this file 
-        print('must have exactly four input arguments')
+        print('Must have exactly four input arguments.')
     else:    
         #check if all inputs are legal
         for i, arg in enumerate(sys.argv):

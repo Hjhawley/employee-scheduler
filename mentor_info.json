@@ -144,7 +144,11 @@
         },
         "Brooke": {
             "weekdays": [
-                "Wednesday"
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
             ],
             "weekday_behavior": [
                 "Re"

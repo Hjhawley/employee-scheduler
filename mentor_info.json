@@ -106,21 +106,12 @@
             "hours_wanted": 40,
             "soft_dates": []
         },
-        "Bella": {
-            "weekdays": [
-                "Tuesday",
-                "Thursday"
-            ],
-            "weekday_behavior": [
-                "Re"
-            ],
-            "hard_dates": [],
-            "hours_wanted": 40,
-            "soft_dates": []
-        },
         "Sam": {
             "weekdays": [
                 "Saturday"
+            ],
+            "preferred_weekdays": [
+                "Sunday"
             ],
             "weekday_behavior": [
                 "Re"

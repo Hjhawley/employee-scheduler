@@ -28,32 +28,34 @@ def BinarySearch(a, x):
 		return -1
 
 class Mentor():
-	"""represents Mentor specific scheduling information for a single pay period"""
+    """represents Mentor specific scheduling information for a single pay period"""
 
-	def __init__(self, name: str, hours_wanted: int, hard_dates: List[int], soft_dates: List[int], len_pay: int):
-		self.name = name
-		self.hours_wanted =  hours_wanted
-		self.hard_dates = [int(date) for date in hard_dates]
-		self.soft_dates = [int(date) for date in soft_dates]
-		self.hours_pay = 0
-		self.days_left = len_pay - len(hard_dates)
-	
-	def __repr__(self):
-		return self.name
+    def __init__(self, name: str, hours_wanted: int, hard_dates: List[int],
+                 soft_dates: List[int], len_pay: int, preferred_weekdays: List[str] = None):
+        self.name = name
+        self.hours_wanted = hours_wanted
+        self.hard_dates = [int(date) for date in hard_dates]
+        self.soft_dates = [int(date) for date in soft_dates]
+        self.hours_pay = 0
+        self.days_left = len_pay - len(hard_dates)
+        self.preferred_weekdays = preferred_weekdays if preferred_weekdays is not None else []
 
-	def __str__(self):
-		return self.name
+    def __repr__(self):
+        return self.name
 
-	def legal_shift_add(self, shift_len: int):
-		"""checks if adding new shifts leads to overtime"""
-		return self.hours_pay + shift_len <= 80 
-		
-	def __radd__(self, other):
-		return other + self.get_available_hours()
-	
-	def get_available_hours(self) -> int:
-		"""get remaining hours this mentor wants in current pay period"""
-		return self.hours_wanted - self.hours_pay
+    def __str__(self):
+        return self.name
+
+    def legal_shift_add(self, shift_len: int):
+        """checks if adding new shifts leads to overtime"""
+        return self.hours_pay + shift_len <= 80 
+
+    def __radd__(self, other):
+        return other + self.get_available_hours()
+
+    def get_available_hours(self) -> int:
+        """get remaining hours this mentor wants in current pay period"""
+        return self.hours_wanted - self.hours_pay
 	
 
 class Day():
@@ -224,15 +226,23 @@ class Schedule():
 		for name, info in mentor_info.items():
 			c_info = info.copy()
 			new_dates = self.hard_date_adj(info['hard_dates'], info["weekdays"], info["weekday_behavior"])
-			c_info['hard_dates'] = [date for date in new_dates if get_truth(date, comparator, end_day)] 
+			c_info['hard_dates'] = [date for date in new_dates if get_truth(date, comparator, end_day)]
 			c_info['name'] = name
-			c_info['hours_wanted'] = c_info['hours_wanted'] * 2 #2 weeks
+			c_info['hours_wanted'] = c_info['hours_wanted'] * 2  #2 weeks
 			c_info['len_pay'] = len_pay
-			c_info = {'hard_dates': c_info['hard_dates'], 'name': name, 'hours_wanted': c_info['hours_wanted'], 'len_pay': len_pay, 'soft_dates' : c_info['soft_dates']}
+			c_info['preferred_weekdays'] = info.get('preferred_weekdays', [])
+			c_info = {
+				'hard_dates': c_info['hard_dates'],
+				'name': name,
+				'hours_wanted': c_info['hours_wanted'],
+				'len_pay': len_pay,
+				'soft_dates': c_info['soft_dates'],
+				'preferred_weekdays': c_info['preferred_weekdays']
+			}
 
 			mentor_list[idx] = Mentor(**c_info)
 			idx += 1
-		
+
 		return mentor_list
 
 
@@ -274,56 +284,52 @@ class Schedule():
 		pay_days.sort(key=lambda day: (day.priority_value,  -day.get_available_mentor_hours())) #costume sort
 
 	def assign_shift(self, pay_days: List[Day]) -> Union[int, Mentor]:
-		"""assign first shift in highest prio day if possible.
-		
+		"""Assign first shift in highest priority day if possible.
 		Returns:
-			1 if all Mentors lost a day otherwise returns mentor who was assigned. Useful for updating mentor eligibility """
-		day = pay_days[0] #ordered list so highest prio day is always first
-		update_mentors = True #prevents double updating mentors available days on recursive calls
+			1 if all Mentors lost a day otherwise returns mentor who was assigned.
+		"""
+		day = pay_days[0]  # Highest priority day (after sorting)
+		day_name = day.date_info.strftime("%A")
+		
+		# Prefer mentors who have this weekday in their preferred_weekdays
+		preferred_candidates = [mentor for mentor in day.potential_mentors if day_name in mentor.preferred_weekdays]
+		# If at least one mentor prefers this day, consider only those; otherwise use all available mentors.
+		candidates = preferred_candidates if preferred_candidates else day.potential_mentors
+
 		highest_prio = -100
 		cur_mentor = None
 
-		for mentor in day.potential_mentors:
+		for mentor in candidates:
 			cur_prio = mentor.get_available_hours() / mentor.days_left
-
-			#update mentor if we get better prio
 			if cur_prio > highest_prio:
 				highest_prio = cur_prio
 				cur_mentor = mentor
 
-		#only occurs when no mentor can work this day so we are done. Optimizer willl hopefully deal with it.
-		if cur_mentor is None: 
+		if cur_mentor is None:
 			self.assigned_days.append(pay_days[0])
-			del pay_days[0] #remove day
+			del pay_days[0]  # Remove day if no mentor is available
 			return 1
 
 		success = day.add_shift(cur_mentor)
 
-		#if we can't assign due to overtime we will look for a shift with less hours
 		if not success:
 			success = day.add_lowest_shift(cur_mentor)
-
-			#if we still can't assign we will remove this mentor and try someone else
 			if not success:
-				update_mentors = False #recursive call will update mentor days don't assign in this stack call
 				day.potential_mentors.remove(cur_mentor)
-				self.prioritize_days(pay_days) #mentor deletion might change day prio's so lets resort days
-				self.assign_shift(pay_days)
+				self.prioritize_days(pay_days)
+				return self.assign_shift(pay_days)
 
-		if update_mentors:
-
-			#if all shifts are full or we are out of mentors we are done w/this day
-			if len(day.potential_mentors) == 1 or not day.available_shifts(): #check one b/c have not del assigned mentor yet
-				for mentor in day.potential_mentors:
-					mentor.days_left -= 1 
-				self.assigned_days.append(pay_days[0])
-				del pay_days[0] #remove day
-				return 1
-
-			else: 
-				cur_mentor.days_left -= 1
-				day.potential_mentors.remove(cur_mentor)
-				return cur_mentor
+		# Update mentor days_left based on assignment
+		if len(day.potential_mentors) == 1 or not day.available_shifts():
+			for mentor in day.potential_mentors:
+				mentor.days_left -= 1
+			self.assigned_days.append(pay_days[0])
+			del pay_days[0]
+			return 1
+		else:
+			cur_mentor.days_left -= 1
+			day.potential_mentors.remove(cur_mentor)
+			return cur_mentor
 
 
 	def mentor_cleanup(self, mentor_update: Union[int, Mentor], pay_days: List[Day], mentors: List[Mentor]):

@@ -72,7 +72,7 @@ class MentorSchedulerGUI:
         self.mentor_dropdown.grid(row=0, column=1)
         self.mentor_dropdown.bind('<<ComboboxSelected>>', self.load_mentor_info)
 
-        # Entry fields for Name, Hours, and Days Unavailable
+        # Entry fields for Name, Hours Wanted, Dates Unavailable
         self.name_entry = self.create_label_entry("Name:", 1)
         self.hours_wanted_entry = self.create_label_entry("Hours wanted per week:", 2)
         self.hard_dates_entry = self.create_label_entry("Dates unavailable:", 3)
@@ -86,14 +86,18 @@ class MentorSchedulerGUI:
             tk.Checkbutton(self.edit_window, text=day, variable=self.weekdays_checkboxes[day]).grid(row=row, column=0, sticky='w')
             row += 1
 
-        # Preferred Weekdays checkboxes
-        tk.Label(self.edit_window, text="Preferred Weekdays:").grid(row=row, column=0, sticky='e')
-        self.preferred_weekdays_checkboxes = {}
+        # Preferred Weekday (dropdown should be sufficient)
+        tk.Label(self.edit_window, text="Prefers to work:").grid(row=row, column=0, sticky='e')
+        self.preferred_weekday_var = tk.StringVar()
+        self.preferred_weekday_dropdown = ttk.Combobox(
+            self.edit_window,
+            textvariable=self.preferred_weekday_var,
+            values=["", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            state="readonly",
+            width=ENTRY_WIDTH
+        )
+        self.preferred_weekday_dropdown.grid(row=row, column=1)
         row += 1
-        for day in ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]:
-            self.preferred_weekdays_checkboxes[day] = tk.BooleanVar()
-            tk.Checkbutton(self.edit_window, text=day, variable=self.preferred_weekdays_checkboxes[day]).grid(row=row, column=0, sticky='w')
-            row += 1
 
         # Save and Delete buttons
         self.save_button = tk.Button(self.edit_window, text="Save", command=self.save_mentor_info, width=20)
@@ -116,8 +120,7 @@ class MentorSchedulerGUI:
             self.hard_dates_entry.delete(0, tk.END)
             for day in self.weekdays_checkboxes:
                 self.weekdays_checkboxes[day].set(False)
-            for day in self.preferred_weekdays_checkboxes:
-                self.preferred_weekdays_checkboxes[day].set(False)
+            self.preferred_weekday_var.set("")
         else:
             mentor_info = self.mentor_data['mentor_info'][selected_mentor_name]
             self.name_entry.delete(0, tk.END)
@@ -128,8 +131,8 @@ class MentorSchedulerGUI:
             self.hard_dates_entry.insert(0, ','.join(map(str, mentor_info.get('hard_dates', []))))
             for day in self.weekdays_checkboxes:
                 self.weekdays_checkboxes[day].set(day in mentor_info.get('weekdays', []))
-            for day in self.preferred_weekdays_checkboxes:
-                self.preferred_weekdays_checkboxes[day].set(day in mentor_info.get('preferred_weekdays', []))
+            pref = mentor_info.get('preferred_weekdays', [])
+            self.preferred_weekday_var.set(pref[0] if pref else "")
 
     def save_mentor_info(self):
         name = self.name_entry.get().strip()
@@ -148,10 +151,10 @@ class MentorSchedulerGUI:
             return
 
         weekdays = [day for day, var in self.weekdays_checkboxes.items() if var.get()]
-        # Retrieve preferred weekdays
-        preferred_weekdays = [day for day, var in self.preferred_weekdays_checkboxes.items() if var.get()]
+        preferred_weekday = self.preferred_weekday_var.get().strip()
+        preferred_weekdays = [preferred_weekday] if preferred_weekday else []
 
-        # Set weekday_behavior to 'Re' by default (or load/update as needed)
+        # Set weekday_behavior to 'Re' by default
         weekday_behavior = self.mentor_data['mentor_info'].get(name, {}).get('weekday_behavior', ['Re'])
 
         self.mentor_data['mentor_info'][name] = {

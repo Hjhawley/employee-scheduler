@@ -275,13 +275,41 @@ class Schedule():
 
 		return days
 
+
 	def prioritize_days(self, pay_days: List[Day]):
 		"""We prioritize using mentors available for each days shift over total number of workable shifts over pay period"""
 		total_available_days = sum([day.get_mentor_days() for day in pay_days]) #total workable shifts
 		for day in pay_days:
-			day.priority_value = (day.get_mentor_days() / (total_available_days + 1)) 
+			# Normal priority:
+			base_priority = day.get_mentor_days() / (total_available_days + 1)
 
-		pay_days.sort(key=lambda day: (day.priority_value,  -day.get_available_mentor_hours())) #costume sort
+			# Assign a special priority to Saturday
+			if day.date_info.weekday() == 5:
+				day.priority_value = -999999
+			else:
+				day.priority_value = base_priority
+
+		# Sort ascending by priority_value, then descending by available_mentor_hours
+		pay_days.sort(key=lambda day: (day.priority_value, -day.get_available_mentor_hours()))
+  
+  
+	def filter_saturday_candidates(self, candidates: List[Mentor], current_day: Day, assigned_days: List[Day]) -> List[Mentor]:
+		# Only apply if the current day is a Saturday, but not the first Saturday of the month
+		if current_day.date_info.weekday() != 5 or current_day.date_info.day <= 7:
+			return candidates
+		previous_saturday = None
+		for day in sorted(assigned_days, key=lambda d: d.date_info, reverse=True):
+			if day.date_info.weekday() == 5 and day.date_info < current_day.date_info:
+				previous_saturday = day
+				break
+		if not previous_saturday:
+			return candidates
+		# exclude mentors who worked last Saturday
+		mentors_last_saturday = {mentor for mentor in previous_saturday.mentors_on_shift.values() if mentor is not None}
+		filtered = [mentor for mentor in candidates if mentor not in mentors_last_saturday]
+		# If filtering leaves you with any candidates, use them; otherwise fall back
+		return filtered if filtered else candidates
+
 
 	def assign_shift(self, pay_days: List[Day]) -> Union[int, Mentor]:
 		"""Assign first shift in highest priority day if possible.
@@ -295,6 +323,9 @@ class Schedule():
 		preferred_candidates = [mentor for mentor in day.potential_mentors if day_name in mentor.preferred_weekdays]
 		# If at least one mentor prefers this day, consider only those; otherwise use all available mentors.
 		candidates = preferred_candidates if preferred_candidates else day.potential_mentors
+
+		# Apply the Saturday filter if the day is Saturday.
+		candidates = self.filter_saturday_candidates(candidates, day, self.assigned_days)
 
 		highest_prio = -100
 		cur_mentor = None
@@ -365,101 +396,3 @@ class Schedule():
 			unassigned_days = len(pay_days)
 		
 		self.assigned_days.sort(key=lambda day:(day.date_info.day)) #sort days in calendar order
-
-	def get_consecutive_day_cost(self, c_days: int) -> int:
-		"""Calculates penalty for mentors working to many consecutive shifts, returns int"""
-		cost = c_days - 4 #no penalty for 4 or less consecutive days worked
-		return cost * cost if cost > 0 else 0
-
-	def track_diversity(self, m_vec: np.array, day, mentor_idxs):
-		num_mentors = len(mentor_idxs)
-		mentors_working = [mentor for mentor in day.mentors_on_shift.values() if mentor != None] #get mentor names
-		v_mentors = np.zeros(num_mentors) #tracks mentors working this day as vector
-		
-		for mentor in mentors_working:
-			idx = mentor_idxs[mentor.name]
-			v_mentors[idx] += 1 #update mentor vector representation of this day
-			
-		for mentor in mentors_working:
-			idx = mentor_idxs[mentor.name]
-			m_vec[idx]+= v_mentors #update mentors vector
-	
-	def update_c_days(self, mentors: List[Mentor], day: Day, con_men_days: List[str], final_day: bool = False) -> int:
-		"""updates consecutive mentor list and returns cost of any evaluated mentors on passed day"""
-		mentors_working = [mentor.name for mentor in day.mentors_on_shift.values() if mentor != None] #get mentor names
-		days_cost = 0
-	
-		for mentor in mentors:
-			if mentor.name in mentors_working and not final_day:
-				con_men_days[mentor.name] += 1
-			else:
-				c_days = con_men_days[mentor.name]
-				con_men_days[mentor.name] = 0
-				days_cost += self.get_consecutive_day_cost(c_days)
-
-		return days_cost
-
-	def get_hour_cost(self, mentors: List[Mentor]) -> int:
-		"""Calculate the penalty for mismatch between mentors desired hours and actual"""
-		total_cost = 0
-		for mentor in mentors:
-			diff = mentor.hours_wanted - mentor.hours_pay
-			total_cost += diff 
-		return total_cost
-
-	def calc_soft_cost(self, pay_days: List[Day], cost =  3) -> int:
-		"""calculate the cost of mentors working on soft restricted dates. Default cost is 3 per day worked"""
-		total_cost = 0
-		for day in pay_days:
-			for mentor in day.mentors_on_shift.values():
-				if day.date_info.day in mentor_info[mentor.name]['soft_dates']:
-					total_cost += cost
-		return total_cost
-
-		
-	def calc_score(self, mentor_list: List[Mentor], day_idx: int, start: bool = True) -> int:
-		"""calculates the cost of a schedule"""
-		#first or second pay shift
-		if start:
-			pay_period = self.assigned_days[:day_idx]
-		else:
-			pay_period = self.assigned_days[day_idx:]
-
-		mentor_idxs = {mentor.name: idx for idx, mentor in enumerate(mentor_list)} #assign vector location to each mentor
-		con_men_days = {mentor.name: 0 for mentor in mentor_list} #tracks mentors consecutive days worked 
-
-		num_mentors = len(mentor_idxs)
-		mentor_vectors = np.zeros((num_mentors, num_mentors))
-		c_cost  = 0
-
-		for day in pay_period:
-			self.track_diversity(mentor_vectors, day, mentor_idxs)
-			c_cost += self.update_c_days(mentor_list, day, con_men_days)
-		
-		#Find sum total of unique mentors who have worked together
-		#since vectors include their own idx we must remove 1 for each mentor
-		shared_shifts = np.count_nonzero(mentor_vectors) - len(mentor_idxs) * 2 #use a scale factor of 2
-		hour_cost = self.get_hour_cost(mentor_list)
-		#soft_cost = self.calc_soft_cost(pay_period)
-		return c_cost + hour_cost + shared_shifts 
-	
-	def calc_all_scores(self) -> Tuple[int, int]:
-		"""Calculate scores for both pay periods"""
-		c1 = self.calc_score(self.m1, self.len_p1)
-		c2 = self.calc_score(self.m2, self.len_p1, start = False)
-		return c1, c2
-
-
-class Optimizer:
-	"""Goal of this class is to take some existing schedule and rearrange it in some interesting way given a cost fxn.
-	Just going to be gradient descent with annealing not going to try and be to fancy"""
-
-	def __init__(self, schedule: Schedule):
-		self.schedule = schedule
-		self.c1, self.c2 = schedule.calc_all_scores
-		self.cur_pay = schedule.pay1.copy()
-		self.cur_mentors = schedule.m1.copy()
-
-
-	def break_con_days(self):
-		pass

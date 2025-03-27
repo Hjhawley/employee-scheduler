@@ -317,6 +317,7 @@ class Schedule():
 			1 if all Mentors lost a day otherwise returns mentor who was assigned.
 		"""
 		day = pay_days[0]  # Highest priority day (after sorting)
+		update_mentors = True #prevents double updating mentors available days on recursive calls
 		day_name = day.date_info.strftime("%A")
 		
 		# Prefer mentors who have this weekday in their preferred_weekdays
@@ -344,23 +345,25 @@ class Schedule():
 		success = day.add_shift(cur_mentor)
 
 		if not success:
+			update_mentors = False #recursive call will update mentor days don't assign in this stack call
 			success = day.add_lowest_shift(cur_mentor)
 			if not success:
 				day.potential_mentors.remove(cur_mentor)
 				self.prioritize_days(pay_days)
 				return self.assign_shift(pay_days)
 
-		# Update mentor days_left based on assignment
-		if len(day.potential_mentors) == 1 or not day.available_shifts():
-			for mentor in day.potential_mentors:
-				mentor.days_left -= 1
-			self.assigned_days.append(pay_days[0])
-			del pay_days[0]
-			return 1
-		else:
-			cur_mentor.days_left -= 1
-			day.potential_mentors.remove(cur_mentor)
-			return cur_mentor
+		if update_mentors:
+			# Update mentor days_left based on assignment
+			if len(day.potential_mentors) == 1 or not day.available_shifts():
+				for mentor in day.potential_mentors:
+					mentor.days_left -= 1
+				self.assigned_days.append(pay_days[0])
+				del pay_days[0]
+				return 1
+			else:
+				cur_mentor.days_left -= 1
+				day.potential_mentors.remove(cur_mentor)
+				return cur_mentor
 
 
 	def mentor_cleanup(self, mentor_update: Union[int, Mentor], pay_days: List[Day], mentors: List[Mentor]):

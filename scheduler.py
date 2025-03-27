@@ -275,13 +275,41 @@ class Schedule():
 
 		return days
 
+
 	def prioritize_days(self, pay_days: List[Day]):
 		"""We prioritize using mentors available for each days shift over total number of workable shifts over pay period"""
 		total_available_days = sum([day.get_mentor_days() for day in pay_days]) #total workable shifts
 		for day in pay_days:
-			day.priority_value = (day.get_mentor_days() / (total_available_days + 1)) 
+			# Normal priority:
+			base_priority = day.get_mentor_days() / (total_available_days + 1)
 
-		pay_days.sort(key=lambda day: (day.priority_value,  -day.get_available_mentor_hours())) #costume sort
+			# Assign a special priority to Saturday
+			if day.date_info.weekday() == 5:
+				day.priority_value = -999999
+			else:
+				day.priority_value = base_priority
+
+		# Sort ascending by priority_value, then descending by available_mentor_hours
+		pay_days.sort(key=lambda day: (day.priority_value, -day.get_available_mentor_hours()))
+  
+  
+	def filter_saturday_candidates(self, candidates: List[Mentor], current_day: Day, assigned_days: List[Day]) -> List[Mentor]:
+		# Only apply if the current day is a Saturday, but not the first Saturday of the month
+		if current_day.date_info.weekday() != 5 or current_day.date_info.day <= 7:
+			return candidates
+		previous_saturday = None
+		for day in sorted(assigned_days, key=lambda d: d.date_info, reverse=True):
+			if day.date_info.weekday() == 5 and day.date_info < current_day.date_info:
+				previous_saturday = day
+				break
+		if not previous_saturday:
+			return candidates
+		# exclude mentors who worked last Saturday
+		mentors_last_saturday = {mentor for mentor in previous_saturday.mentors_on_shift.values() if mentor is not None}
+		filtered = [mentor for mentor in candidates if mentor not in mentors_last_saturday]
+		# If filtering leaves you with any candidates, use them; otherwise fall back
+		return filtered if filtered else candidates
+
 
 	def assign_shift(self, pay_days: List[Day]) -> Union[int, Mentor]:
 		"""Assign first shift in highest priority day if possible.
@@ -295,6 +323,9 @@ class Schedule():
 		preferred_candidates = [mentor for mentor in day.potential_mentors if day_name in mentor.preferred_weekdays]
 		# If at least one mentor prefers this day, consider only those; otherwise use all available mentors.
 		candidates = preferred_candidates if preferred_candidates else day.potential_mentors
+
+		# Apply the Saturday filter if the day is Saturday.
+		candidates = self.filter_saturday_candidates(candidates, day, self.assigned_days)
 
 		highest_prio = -100
 		cur_mentor = None

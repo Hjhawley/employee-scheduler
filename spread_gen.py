@@ -38,8 +38,8 @@ def write_to_csv(schedule: Schedule, file_name: str):
             if idx < num_mentor:
                 row = pad_or_truncate(row, 10)
                 row[5] = schedule.m1[idx].name
-                row[6] = schedule.m1[idx].hours_pay
-                row[7] = schedule.m2[idx].hours_pay
+                row[6] = int(schedule.m1[idx].hours_pay)
+                row[7] = int(schedule.m2[idx].hours_pay)
                 row[8] = schedule.m1[idx].hours_wanted
                 row[9] = schedule.m1[idx].hard_dates + schedule.m2[idx].hard_dates
             writer.writerow(row)

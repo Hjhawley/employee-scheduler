@@ -114,7 +114,7 @@
       "weekdays": [],
       "preferred_weekdays": [],
       "weekday_behavior": ["Re"],
-      "hard_dates": [2, 9, 11, 16, 18, 23, 25, 30],
+      "hard_dates": [2, 9, 11, 16, 18, 20, 23, 25, 30],
       "hours_wanted": 30,
       "soft_dates": []
     },
@@ -123,6 +123,14 @@
       "preferred_weekdays": [],
       "weekday_behavior": ["Re"],
       "hard_dates": [],
+      "hours_wanted": 30,
+      "soft_dates": []
+    },
+    "Michael": {
+      "weekdays": ["Monday", "Wednesday"],
+      "preferred_weekdays": ["Tuesday"],
+      "weekday_behavior": ["Re"],
+      "hard_dates": [1, 3, 8, 10, 15, 17, 22, 24, 29],
       "hours_wanted": 30,
       "soft_dates": []
     }
